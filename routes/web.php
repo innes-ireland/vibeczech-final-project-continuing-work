@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WorkerController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,6 @@ use App\Http\Controllers\WorkerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [LoginController::class, 'index']);
 Route::get('/worker', [WorkerController::class, 'detail'])->name('worker.detail');
