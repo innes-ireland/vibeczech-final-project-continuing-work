@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/worker', [WorkerController::class, 'detail'])->name('worker.detail');
+Route::get('/logout', [WorkerController::class, 'logout']);

@@ -10,4 +10,9 @@ class WorkerController extends Controller
     {
         return view('worker.detail');
     }
+
+    public function logout ()
+    {
+        return view('login.login');
+    }
 }

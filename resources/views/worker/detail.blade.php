@@ -1,11 +1,12 @@
 @extends('layouts.main')
+@include('layouts.header')
 @include('layouts.footer')
 
 @section('content')
 
 <div class="worker-detail">
 
-  <h1>worker detail page goes here</h1>
+  <h1>worker detail content goes here</h1>
 
   <div class="graph-container"></div>
   

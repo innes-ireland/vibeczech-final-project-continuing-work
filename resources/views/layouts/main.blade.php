@@ -21,8 +21,7 @@
         </style>
     </head>
     <body>
-      <h2>we are in main layout here</h2>
-      {{-- @yield('header') --}}
+      @yield('header')
       @yield('content') 
       @yield('footer')
     </body>
