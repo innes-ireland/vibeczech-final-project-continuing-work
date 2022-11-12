@@ -10,6 +10,8 @@
   
   <a class="add-tool-button"> Tool Adder </a>
 
+  @yield('admin.tool-adder-modal')
+
   <div class="work-parties-container"></div>
 
   <div class="graph-container"></div>
