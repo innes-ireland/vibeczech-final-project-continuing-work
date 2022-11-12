@@ -1,4 +1,6 @@
-@extends('layouts/main')
+@extends('layouts.main')
+@include('layouts.footer')
+
 @section('content')
 
 <div class="worker-detail">
