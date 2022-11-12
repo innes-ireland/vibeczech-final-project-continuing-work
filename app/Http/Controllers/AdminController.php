@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class WorkerController extends Controller
+class AdminController extends Controller
 {
-    public function detail()
+    public function index()
     {
-        return view('worker.detail');
+        return view('admin.index');
     }
 
     public function logout ()
