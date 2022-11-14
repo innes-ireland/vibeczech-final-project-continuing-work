@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('manufacturer');
             $table->string('name');
-            $table->int('vibration_rating');
-            $table->int('noise_rating');
+            $table->integer('vibration_rating');
+            $table->integer('noise_rating');
         });
     }
 
