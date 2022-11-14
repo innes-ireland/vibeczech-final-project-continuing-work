@@ -1,7 +1,4 @@
 @extends('layouts.main')
-@include('layouts.header')
-@include('layouts.footer')
-{{-- @include('admin.modals') --}}
 
 @section('content')
 
@@ -30,7 +27,7 @@
         @vite('resources/js/work-party-modal.jsx')    
   </div>
 
-
+  <div class="work-parties-container"></div>
 
   <div class="graph-container"></div>
 
