@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>VibeCzech | Login</title>
   <link rel="stylesheet" href="{{ asset('css/universal-index.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/registration-modal.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/modal.css')}}">
 </head>
 
 @section('content')
