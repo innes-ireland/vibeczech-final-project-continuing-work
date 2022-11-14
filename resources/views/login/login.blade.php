@@ -10,6 +10,8 @@
   <title>VibeCzech | Login</title>
   <link rel="stylesheet" href="{{ asset('css/universal-index.css')}}">
   <link rel="stylesheet" href="{{ asset('css/modal.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/login.scss')}}">
+
 </head>
 
 @section('content')

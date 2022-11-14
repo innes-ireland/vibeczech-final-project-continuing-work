@@ -18,21 +18,16 @@ export default function App() {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div class='login__form'>
+            <h1>- Login -</h1>
             <form> {/* Needs action */}
                 <label htmlFor='username'>Username</label>
-                <br /> {/* All breaks should eventually be replaced with styling */}
                 <input type='text' id='username' name='username' />
-                <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
                 <label htmlFor='password'>Password</label>
-                <br /> {/* All breaks should eventually be replaced with styling */}
                 <input type='password' id='password' name='password' />
-                <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
                 <button id='login' name='login'>Login</button>
-                <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
                 <a href='#' id='register' onClick={showModal}>Register</a>
             </form>
