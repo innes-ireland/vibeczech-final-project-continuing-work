@@ -2,11 +2,12 @@ import React from 'react';
 
 export default function App() {
 
-    const modal = document.getElementById("modal");
 
     const showModal = () => {
-        console.log(modal.style);
+        const modal = document.getElementById("modal");
+        console.log(modal);
         modal.style.display = "block";
+        console.log(modal.style);
     }
 
     const hideModal = (e) => {
@@ -34,7 +35,7 @@ export default function App() {
                 <a href='#' id='register' onClick={showModal}>Register</a>
             </form>
 
-            <div id='modal' className='modal' onClick={hideModal}>
+            <div id='modal' className='modal' onClick={hideModal} style={{ display: "none" }}>
                 <div className='modal__content'>
                     <p>Modal</p>
                 </div>
