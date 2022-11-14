@@ -26,7 +26,7 @@ export default function App() {
                 <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
                 <label htmlFor='password'>Password</label>
-                <br />
+                <br /> {/* All breaks should eventually be replaced with styling */}
                 <input type='password' id='password' name='password' />
                 <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
