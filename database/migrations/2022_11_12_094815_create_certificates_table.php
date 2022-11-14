@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps('issue_date');
             $table->timestamps('expiry_date');
-            $table->id('user_id');
+            $table->unsignedBigInteger('user_id');
 
         });
     }

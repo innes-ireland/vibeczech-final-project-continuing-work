@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('user_self_assesment', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->id('user_id');
-            $table->id('self_assessment_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('self_assessment_id');
             $table->boolean('answer')->nullable();
             
 

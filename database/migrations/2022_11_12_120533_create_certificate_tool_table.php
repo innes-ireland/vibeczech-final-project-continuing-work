@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('certificate_tool', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->id('tool_id');
-            $table->id('certificate_id');
+            $table->unsignedBigInteger('tool_id');
+            $table->unsignedBigInteger('certificate_id');
         });
     }
 

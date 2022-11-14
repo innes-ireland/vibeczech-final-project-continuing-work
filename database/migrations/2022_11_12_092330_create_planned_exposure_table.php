@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('planned_exposure', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->id('created_by');
-            $table->id('worker_exposed');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('worker_exposed');
             $table->datetime('exposure_start');
             $table->datetime('exposure_end');
-            $table->id('tool_id');
+            $table->unsignedBigInteger('tool_id');
         });
     }
 
