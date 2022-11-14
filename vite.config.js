@@ -8,7 +8,9 @@ export default defineConfig({
       input: [
         'resources/css/app.css',
         'resources/js/app.js',
-        'resources/js/registration-modal.jsx'
+        'resources/js/registration-modal.jsx',
+        'resources/js/add-tool-modal.jsx',
+        'resources/js/work-party-modal.jsx'
       ],
       refresh: true,
     }),
