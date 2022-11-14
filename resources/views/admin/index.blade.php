@@ -1,15 +1,16 @@
 @extends('layouts.main')
 @include('layouts.header')
 @include('layouts.footer')
+{{-- @include('admin.modals') --}}
 
 @section('content')
 
 <div class="admin-index">
   {{-- styling needed for modals display, below. Potentially we can have this outside but for now its here --}}
     <style>
-    .modal {
+    /* .modal {
         display: none;
-    }
+    } */
 
     .work-party-modal {
       display: none;
@@ -19,23 +20,28 @@
   <h1>admin index content goes here</h1>
   
   {{-- here comes add tool modal --}}
-  <div id='root' >
 
+  {{-- @include('admin.modals') --}}
+<div id='root' >
+  {{-- @include('admin.modals') --}}
         @viteReactRefresh
         @vite('resources/js/add-tool-modal.jsx')
+         @include('admin.modals')
+           {{-- @yield('add-tool-modal')  --}}
+          {{-- @include('admin.modals') --}}
         
   </div>
-   @yield('add-tool-modal')
+   {{-- @yield('add-tool-modal')  --}}
 
 
    
 {{-- here comes work parties modal --}}
-  <div id='root2' class="work-parties-container">
+  {{-- <div id='root2' class="work-parties-container">
        @viteReactRefresh
         @vite('resources/js/work-party-modal.jsx')
 
-  </div>
-    @yield('work-party-modal')
+  </div> --}}
+    {{-- @yield('work-party-modal') --}}
 
 
 

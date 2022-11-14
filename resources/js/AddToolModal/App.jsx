@@ -7,6 +7,7 @@ export default function App() {
 
     const showModal = () => {
         modal.style.display = "block";
+        console.log(modal.style.display)
     }
 
 

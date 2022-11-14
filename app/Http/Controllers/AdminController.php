@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.modals');
+        return view('admin.index');
     }
 
     public function logout ()
