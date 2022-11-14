@@ -2,17 +2,32 @@ import React from 'react';
 
 export default function App() {
 
-    const modal = document.getElementById("modal");
 
 
     const showModal = () => {
+        const modal = document.getElementById("modal_add_tool");
+        console.log(modal);
         modal.style.display = "block";
-        console.log(modal.style.display)
+
+    }
+
+    const hideModal = (e) => {
+        const modal = document.getElementById("modal_add_tool");
+        modal.style.display = "none";
+
+
     }
 
 
     return (
-        < a href='#' id='modal' onClick={showModal} > Add tools</a >
+        <>
+            < a href='#' id='modalTrigger' onClick={showModal} > Add tools</a >
+            <div id='modal_add_tool' class='modal' onClick={hideModal}>
+                <div className='modal__content'>
+                    <h1 >Add Tools</h1>
+                </div>
+            </div>
+        </>
 
 
     )

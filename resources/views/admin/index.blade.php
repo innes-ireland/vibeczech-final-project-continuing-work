@@ -6,42 +6,29 @@
 @section('content')
 
 <div class="admin-index">
-  {{-- styling needed for modals display, below. Potentially we can have this outside but for now its here --}}
-    <style>
-    /* .modal {
-        display: none;
-    } */
+  
 
-    .work-party-modal {
-      display: none;
-    }
-  </style>
 
   <h1>admin index content goes here</h1>
   
   {{-- here comes add tool modal --}}
 
-  {{-- @include('admin.modals') --}}
-<div id='root' >
-  {{-- @include('admin.modals') --}}
+
+<div id='add_tool_modal' >
+ 
         @viteReactRefresh
-        @vite('resources/js/add-tool-modal.jsx')
-         @include('admin.modals')
-           {{-- @yield('add-tool-modal')  --}}
-          {{-- @include('admin.modals') --}}
-        
+        @vite('resources/js/add-tool-modal.jsx')    
   </div>
-   {{-- @yield('add-tool-modal')  --}}
+ 
 
 
    
 {{-- here comes work parties modal --}}
-  {{-- <div id='root2' class="work-parties-container">
-       @viteReactRefresh
-        @vite('resources/js/work-party-modal.jsx')
-
-  </div> --}}
-    {{-- @yield('work-party-modal') --}}
+<div id='work_party_modal' >
+ 
+        @viteReactRefresh
+        @vite('resources/js/work-party-modal.jsx')    
+  </div>
 
 
 
