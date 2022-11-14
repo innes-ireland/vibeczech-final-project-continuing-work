@@ -52,6 +52,10 @@ h1 {
     width: 100%;
 }
 
+input {
+    border-radius: 4px;
+}
+
 .logo {
     margin-left: 40%;
 }
@@ -64,10 +68,6 @@ h1 {
 .logout-button {
     margin-right: 4em;
     margin-top: 1.7em;
-}
-
-input {
-    border-radius: 4px;
 }
 
 p {
