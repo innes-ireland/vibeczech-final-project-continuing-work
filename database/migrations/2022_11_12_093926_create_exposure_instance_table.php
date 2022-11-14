@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('plan_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('exposure_value');
-            $table->timestamps('exposure_start');
-            $table->timestamps('exposure_finish');
+            $table->dateTime('exposure_start');
+            $table->dateTime('exposure_finish');
             $table->integer('duration_minutes');
             $table->unsignedBigInteger('tool_id');
         });

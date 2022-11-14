@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->timestamps('issue_date');
-            $table->timestamps('expiry_date');
+            $table->date('issue_date');
+            $table->date('expiry_date');
             $table->unsignedBigInteger('user_id');
 
         });
