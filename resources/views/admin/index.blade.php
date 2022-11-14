@@ -3,12 +3,29 @@
 @section('content')
 
 <div class="admin-index">
+  
+
 
   <h1>admin index content goes here</h1>
   
-  <a class="add-tool-button"> Tool Adder </a>
+  {{-- here comes add tool modal --}}
 
-  @yield('admin.tool-adder-modal')
+
+<div id='add_tool_modal' >
+ 
+        @viteReactRefresh
+        @vite('resources/js/add-tool-modal.jsx')    
+  </div>
+ 
+
+
+   
+{{-- here comes work parties modal --}}
+<div id='work_party_modal' >
+ 
+        @viteReactRefresh
+        @vite('resources/js/work-party-modal.jsx')    
+  </div>
 
   <div class="work-parties-container"></div>
 

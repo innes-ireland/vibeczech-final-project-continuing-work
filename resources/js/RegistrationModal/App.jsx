@@ -19,6 +19,7 @@ export default function App() {
 
     return (
         <div>
+            <h1>Login</h1>
             <form> {/* Needs action */}
                 <label htmlFor='username'>Username</label>
                 <br /> {/* All breaks should eventually be replaced with styling */}

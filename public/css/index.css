@@ -1,3 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik+Mono+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 html {
-    background-color: #000000;
+    background-color: #000000bf;
+    color: white;
+    font-family: 'Saira';
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #dc4c18;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+button {
+    background-color: #dc4c18;
+    border: none;
+    font-family: 'Open Sans';
+}
+
+button:hover {
+    background-color: #ffffff;
+}
+
+h1 {
+    font-family: 'Rubik Mono One';
+}
+
+input {
+    border-radius: 4px;
+}
+
+p {
+    font-family: 'Open Sans';
 }
