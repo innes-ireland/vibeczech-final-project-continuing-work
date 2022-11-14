@@ -1,5 +1,3 @@
-@section('header')
-
 <div class="header">
 
   <div class="logo">
@@ -11,8 +9,6 @@
   <a class="logout-button" href="{{ route('logout') }}"> Log out</a>
 
 </div>
-
-@endsection
 
 {{-- DoD: Importable HTML template file. When imported, adds banner to top of the page with the logo and a logout option.
 

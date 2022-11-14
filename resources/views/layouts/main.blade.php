@@ -21,8 +21,8 @@
         </style>
     </head>
     <body>
-      @yield('header')
+      @include('layouts.header')
       @yield('content') 
-      @yield('footer')
+      @include('layouts.footer')
     </body>
 </html>

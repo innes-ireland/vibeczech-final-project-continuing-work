@@ -1,6 +1,4 @@
 @extends('layouts.main')
-@include('layouts.header')
-@include('layouts.footer')
 
 @section('content')
 
@@ -9,6 +7,8 @@
   <h1>admin index content goes here</h1>
   
   <a class="add-tool-button"> Tool Adder </a>
+
+  @yield('admin.tool-adder-modal')
 
   <div class="work-parties-container"></div>
 
