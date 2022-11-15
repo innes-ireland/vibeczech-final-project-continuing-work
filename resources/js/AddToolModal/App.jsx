@@ -21,10 +21,10 @@ export default function App() {
 
     return (
         <>
-            < a href='#' id='modalTrigger' onClick={showModal} > Add tools</a >
+            < a href='#' id='modalTrigger' onClick={showModal} > Add Tool</a >
             <div id='modal_add_tool' class='modal' onClick={hideModal}>
                 <div className='modal__content'>
-                    <h1 >Add Tools</h1>
+                    <h1 >Add Tool</h1>
                 </div>
             </div>
         </>
