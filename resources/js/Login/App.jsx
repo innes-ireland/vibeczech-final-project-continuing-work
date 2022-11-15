@@ -30,7 +30,11 @@ export default function App() {
         console.log(data);
         setUser(data);
         console.log('Can we put the is_admin if else here?')
-        console.log(data);
+        data.is_admin
+          ?
+          window.location.replace('/admin')
+          :
+          window.location.replace('/worker')
       }
       catch (err) {
         console.log(err);
