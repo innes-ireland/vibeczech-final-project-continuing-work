@@ -4,7 +4,7 @@
 html {
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Saira';
+    font-family: 'Saira', Tahoma;
 }
 
 body {
@@ -26,7 +26,7 @@ button {
     background-color: #dc4c18;
     border: none;
     border-radius: 4px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', Tahoma;
 }
 
 button:hover {
@@ -45,7 +45,7 @@ button:hover {
 
 h1 {
     color: #dc4c18;
-    font-family: 'Rubik Mono One';
+    font-family: 'Rubik Mono One', Tahoma;
 }
 
 .header {
@@ -77,5 +77,5 @@ input {
 }
 
 p {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', Tahoma;
 }

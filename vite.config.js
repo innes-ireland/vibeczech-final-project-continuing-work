@@ -8,6 +8,7 @@ export default defineConfig({
       input: [
         'resources/css/app.css',
         'resources/css/login.scss',
+        'resources/css/worker-detail.scss',
         'resources/css/modal.css',
         'resources/css/universal-index.css',
         'resources/js/app.js',
