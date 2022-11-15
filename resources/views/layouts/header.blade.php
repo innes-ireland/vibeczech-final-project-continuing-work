@@ -1,7 +1,9 @@
 <div class="header">
 
   <div class="logo">
-    logo goes here
+    <a href="http://www.vibeczech.test/">
+      <img src="{{ asset('logo.png') }}" alt="VibeCzech logo" id="logo">
+    </a>
   </div>
 
   {{-- TODO: make the logout button actually log out --}}

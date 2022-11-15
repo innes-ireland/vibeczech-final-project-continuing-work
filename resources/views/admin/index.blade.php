@@ -1,7 +1,14 @@
 @extends('layouts.main')
 
-@section('content')
+{{-- Head section --}}
+@section('head')
+  <title>VibeCzech | Admin</title>
+  @vite('resources/css/modal.css')
+@endsection
 
+
+{{-- Content section --}}
+@section('content')
 <div class="admin-index">
   
 

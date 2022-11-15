@@ -1,0 +1,139 @@
+@media only screen and (max-width: 600px) {
+    .exposure-record {
+        background-color: #232323;
+        margin-left: 7%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    .graph-container {
+        background-color: #232323;
+        margin-bottom: 3em;
+        margin-left: 7%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 23%;
+    }
+
+    .logout-button {
+        margin-right: 1em;
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .exposure-record {
+        background-color: #232323;
+        margin-left: 8%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    .graph-container {
+        background-color: #232323;
+        margin-bottom: 3em;
+        margin-left: 8%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 32%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .exposure-record {
+        background-color: #232323;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    .graph-container {
+        background-color: #232323;
+        margin-bottom: 3em;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 38%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .exposure-record {
+        background-color: #232323;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    .graph-container {
+        background-color: #232323;
+        margin-bottom: 3em;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 40%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .exposure-record {
+        background-color: #232323;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    .graph-container {
+        background-color: #232323;
+        margin-bottom: 3em;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 1em;
+        width: 80%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 42%;
+    }
+}
