@@ -3,6 +3,7 @@
 {{-- Head section --}}
 @section('head')
   <title>VibeCzech | Admin</title>
+  @vite('resources/css/admin.scss')
   @vite('resources/css/modal.css')
 @endsection
 
@@ -10,31 +11,21 @@
 {{-- Content section --}}
 @section('content')
 <div class="admin-index">
-  
-
-
-  <h1>admin index content goes here</h1>
-  
-  {{-- here comes add tool modal --}}
-
-
-<div id='add_tool_modal' >
  
+  
+  <h1>admin index content goes here</h1>
+
+  <div id='add_tool_modal' >
         @viteReactRefresh
         @vite('resources/js/add-tool-modal.jsx')    
   </div>
- 
-
-
-   
-{{-- here comes work parties modal --}}
-<div id='work_party_modal' >
- 
-        @viteReactRefresh
-        @vite('resources/js/work-party-modal.jsx')    
+  
+  <div class="work-parties-container">
+    <div id='work_party_modal' >
+          @viteReactRefresh
+          @vite('resources/js/work-party-modal.jsx')    
+    </div>
   </div>
-
-  <div class="work-parties-container"></div>
 
   <div class="graph-container"></div>
 
