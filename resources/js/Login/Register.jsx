@@ -26,7 +26,9 @@ export default function Register(props) {
       const response = await axios.post('/register', values);
       // get the (already JSON-parsed) response data
       const response_data = response.data;
+      props.setModalVisible(false);
     } catch (error) {
+      console.log(error);
       // if the response code is not 2xx (success)
       switch (error.response.status) {
         case 422:

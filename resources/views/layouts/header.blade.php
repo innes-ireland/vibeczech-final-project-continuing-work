@@ -8,7 +8,9 @@
 
   {{-- TODO: make the logout button actually log out --}}
 
-  <a class="logout-button" href="{{ route('logout') }}"> Log out</a>
+    <div id="root-logout"></div>
+    @viteReactRefresh    
+    @vite('resources/js/Logout.jsx')
 
 </div>
 
