@@ -13,26 +13,21 @@ export default function App() {
     })
 
 
-    useEffect(
-        () => {
-            console.log(values)
-        }, [values])
+
+    const [successMessage, setSuccessMessage] = useState(null);
 
 
+    //--------opening and closing modals----------
     const showModal = () => {
         const modal = document.getElementById("modal_add_tool");
-        console.log(modal);
         modal.style.display = "block";
-
     }
 
     const hideModal = (e) => {
         const modal = document.getElementById("modal_add_tool");
         modal.style.display = "none";
-
-
     }
-
+    //--------opening and closing modals----------
 
 
 
@@ -40,7 +35,7 @@ export default function App() {
 
         event.preventDefault();
 
-        // make the AJAX request
+        // making the AJAX request
         const response = await fetch('/api/tools/add', {
             method: 'POST',
             body: JSON.stringify(values),
@@ -51,8 +46,10 @@ export default function App() {
             }
         });
 
-        // parse the response as JSON
+        // parsing the response as JSON
         const response_data = await response.json();
+
+        setSuccessMessage('Tool was successfully added');
 
         // if the response code is not 2xx(success)
         if (Math.floor(response.status / 100) !== 2) {
@@ -83,6 +80,11 @@ export default function App() {
     return (
         <>
             < a href='#' id='modalTrigger' onClick={showModal} > Add tools</a >
+            {
+                successMessage
+                    ? <div className="success-message">{successMessage}</div>
+                    : ''
+            }
             <div id='modal_add_tool' class='modal'>
                 <div className='modal__content'>
                     <h1 >Add Tools</h1>
