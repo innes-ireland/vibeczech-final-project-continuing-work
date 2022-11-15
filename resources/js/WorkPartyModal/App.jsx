@@ -7,14 +7,13 @@ export default function App() {
     const showModal = () => {
         const modal = document.getElementById("modal_work_party");
         modal.style.display = "block";
-
     }
 
     const hideModal = (e) => {
         const modal = document.getElementById("modal_work_party");
-        modal.style.display = "none";
-
-
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
     }
 
 
