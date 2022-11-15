@@ -1,4 +1,4 @@
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 600px) {
     button {
         font-size: 1.2em;
         height: 2em;
@@ -10,62 +10,12 @@
     input {
         background-color: #232323;
         color: #ffffff;
-        font-size: 1.8em;
-        height: 1.8em;
-        margin-bottom: 1.5em;
-        outline: 0;
-        padding-left: 0.8em;
-        padding-right: 0.8em;
-        width: 50%;
-    }
-
-    form {
-        align-items: center;
-        background-color: #232323;
-        border: none;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        margin-bottom: 10%;
-        margin-left: 30%;
-        margin-right: 30%;
-        padding: 2%;
-        width: 40%;
-    }
-
-    h1 {
-        font-size: 3em;
-        text-align: center;
-    }
-
-    label {
-        font-size: 1.5em;
-        margin-bottom: 0.3em;
-    }
-
-    #register {
-        margin-left: 80%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    button {
         font-size: 1.2em;
-        height: 2em;
-        margin-top: 1em;
-        margin-bottom: 1.5em;
-        width: 80px;
-    }
-
-    input {
-        background-color: #232323;
-        color: #ffffff;
-        font-size: 1.8em;
         height: 1.8em;
         margin-bottom: 1.5em;
         outline: 0;
-        padding-left: 0.6em;
-        padding-right: 0.6em;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
         width: 50%;
     }
 
@@ -77,14 +27,14 @@
         flex-flow: column wrap;
         justify-content: center;
         margin-bottom: 10%;
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 15%;
+        margin-right: 15%;
         padding: 2%;
-        width: 60%;
+        width: 70%;
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 2em;
         text-align: center;
     }
 
@@ -94,11 +44,16 @@
     }
 
     .logo {
-        margin-left: 38%;
+        margin-left: 22%;
+    }
+
+    .logout-button {
+        margin-right: 1em;
+        font-size: 0.8em;
     }
 
     #register {
-        margin-left: 80%;
+        margin-left: 70%;
     }
 }
 
@@ -156,7 +111,7 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 768px) {
     button {
         font-size: 1.2em;
         height: 2em;
@@ -168,12 +123,12 @@
     input {
         background-color: #232323;
         color: #ffffff;
-        font-size: 1.2em;
+        font-size: 1.8em;
         height: 1.8em;
         margin-bottom: 1.5em;
         outline: 0;
-        padding-left: 0.1em;
-        padding-right: 0.1em;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
         width: 50%;
     }
 
@@ -185,14 +140,14 @@
         flex-flow: column wrap;
         justify-content: center;
         margin-bottom: 10%;
-        margin-left: 15%;
-        margin-right: 15%;
+        margin-left: 20%;
+        margin-right: 20%;
         padding: 2%;
-        width: 70%;
+        width: 60%;
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 3em;
         text-align: center;
     }
 
@@ -202,15 +157,118 @@
     }
 
     .logo {
-        margin-left: 22%;
-    }
-
-    .logout-button {
-        margin-right: 1em;
-        font-size: 0.8em;
+        margin-left: 38%;
     }
 
     #register {
-        margin-left: 70%;
+        margin-left: 80%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    button {
+        font-size: 1.2em;
+        height: 2em;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        width: 80px;
+    }
+
+    input {
+        background-color: #232323;
+        color: #ffffff;
+        font-size: 1.8em;
+        height: 1.8em;
+        margin-bottom: 1.5em;
+        outline: 0;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        width: 50%;
+    }
+
+    form {
+        align-items: center;
+        background-color: #232323;
+        border: none;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin-bottom: 10%;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 2%;
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    label {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .logo {
+        margin-left: 41%;
+    }
+
+    #register {
+        margin-left: 80%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    button {
+        font-size: 1.2em;
+        height: 2em;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        width: 80px;
+    }
+
+    input {
+        background-color: #232323;
+        color: #ffffff;
+        font-size: 1.8em;
+        height: 1.8em;
+        margin-bottom: 1.5em;
+        outline: 0;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+        width: 50%;
+    }
+
+    form {
+        align-items: center;
+        background-color: #232323;
+        border: none;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        margin-bottom: 10%;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 2%;
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    label {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .logo {
+        margin-left: 43%;
+    }
+
+    #register {
+        margin-left: 80%;
     }
 }

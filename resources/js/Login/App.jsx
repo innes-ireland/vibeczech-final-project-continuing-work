@@ -29,7 +29,7 @@ export default function App() {
 
     // replace most of this with generic login page shit
     <div>
-      <h1>Login</h1>
+      <h1>- Login -</h1>
       <form> {/* Needs action */}
         <label htmlFor='email'>Email</label>
         <br /> {/* All breaks should eventually be replaced with styling */}
