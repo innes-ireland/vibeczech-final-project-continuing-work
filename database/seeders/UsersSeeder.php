@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsersSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::statement('TRUNCATE table users;');
         $users = [
             [
               'first_name' => 'Admina',
@@ -165,6 +166,7 @@ class UsersSeeder extends Seeder
         ];
 
         foreach ($users as $user) {
+            $user['password'] = bcrypt($user['password']);
             User::create($user);
         }
     }

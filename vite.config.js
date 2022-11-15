@@ -14,7 +14,8 @@ export default defineConfig({
         'resources/js/app.js',
         'resources/js/registration-modal.jsx',
         'resources/js/add-tool-modal.jsx',
-        'resources/js/work-party-modal.jsx'
+        'resources/js/work-party-modal.jsx',
+        'resources/js/Logout.jsx',
       ],
       refresh: true,
     }),
