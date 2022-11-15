@@ -4,24 +4,30 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
 
+    const [modalVisible, setModalVisible] = useState(false)
+    const [workers, setWorkers] = useState([]);
 
     //-------this section displays and hides the modal----------
     const showModal = () => {
-        const modal = document.getElementById("modal_work_party");
-        modal.style.display = "block";
+        // const modal = document.getElementById("modal_work_party");
+        // modal.style.display = "block";
+        setModalVisible(true)
     }
 
     const hideModal = (e) => {
         const modal = document.getElementById("modal_work_party");
+        const button = document.getElementById("button_add_party");
         if (e.target == modal) {
-            modal.style.display = "none";
+            setModalVisible(false)
+        } else if (e.target == button) {
+            setModalVisible(false)
         }
     }
     //------------------
 
 
     //fetch to get data to display workers
-    const [workers, setWorkers] = useState([]);
+
     const loadWorkers = async () => {
         // Getting data with fetch:
         // const response = await fetch('/api/work-party');
@@ -44,17 +50,23 @@ export default function App() {
     return (
         <>
             < a href='#' id='modalTrigger' onClick={showModal} > Create Work Party</a >
-            <div id='modal_work_party' class='modal' onClick={hideModal}>
-                <div className='modal__content'>
-                    <h1 >Work Party</h1>
+            {
+                modalVisible ?
+                    <div id='modal_work_party' class='modal' onClick={hideModal}>
+                        <div className='modal__content'>
+                            <h1 >Work Party</h1>
 
-                    {
-                        workers.map(worker => {
-                            return <div>{worker.first_name} {worker.last_name}</div>
-                        })
-                    }
-                </div>
-            </div>
+                            {
+                                workers.map(worker => {
+                                    return <div>{worker.first_name} {worker.last_name}</div>
+                                })
+                            }
+                            <button id='button_add_party' onClick={hideModal}>Create Work Party</button>
+                        </div>
+                    </div>
+                    :
+                    <></>
+            }
         </>
 
 

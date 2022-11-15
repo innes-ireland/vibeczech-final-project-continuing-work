@@ -28,13 +28,17 @@ export default function App() {
 
     const hideModal = (e) => {
         const modal = document.getElementById("modal_add_tool");
+        const button = document.getElementById("button_add_tool");
         // modal.style.display = "none";
         if (e.target == modal) {
             // Should remove some comments
             // modal.style.display = "none";
             // Hides modal if you click outside of the modal__content box
             setModalVisible(false)
+        } else if (e.target == button) {
+            setModalVisible(false)
         }
+
     }
     //--------opening and closing modals----------
 
@@ -98,7 +102,7 @@ export default function App() {
 
             {
                 modalVisible ?
-                    <div id='modal_add_tool' className='modal'>
+                    <div id='modal_add_tool' className='modal' onClick={hideModal}>
                         <div className='modal__content'>
                             <h1 >Add Tools</h1>
                             <form action="/api/tools/add" method="post" onSubmit={handleSubmit} >
@@ -130,7 +134,7 @@ export default function App() {
                                     onChange={handleChange}
                                 />
                                 <br />
-                                <button >Add tool</button>
+                                <button id='button_add_tool' onClick={hideModal}>Add tool</button>
 
                             </form>
                         </div>
