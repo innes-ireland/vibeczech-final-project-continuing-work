@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+
+// THIS IS NOT A FILE WE SHOULD BE USING ANYMORE. WOULD LIKE TO DELETE ONCE WE'RE SURE EVERYTHING IS
+// POINTING TO THE FILES IN THE LOGIN FOLDER
+
+
+
+
+
+
+
+
+
 import React from 'react';
 
 export default function App() {

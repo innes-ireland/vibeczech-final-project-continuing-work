@@ -17,7 +17,7 @@ export default function Register(props) {
 
     event.preventDefault();
 
-    console.log("submiting");
+    console.log("submitting");
     // console.log(axios)
 
     // with axios
