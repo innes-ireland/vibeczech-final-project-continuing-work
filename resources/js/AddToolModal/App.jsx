@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
 
+    const [modalVisible, setModalVisible] = useState(false)
+    const [successMessage, setSuccessMessage] = useState(null);
 
     const [values, setValues] = useState({
         name: '',
@@ -14,18 +16,25 @@ export default function App() {
 
 
 
-    const [successMessage, setSuccessMessage] = useState(null);
+
 
 
     //--------opening and closing modals----------
     const showModal = () => {
-        const modal = document.getElementById("modal_add_tool");
-        modal.style.display = "block";
+        // const modal = document.getElementById("modal_add_tool");
+        setModalVisible(true)
+        // modal.style.display = "block";
     }
 
     const hideModal = (e) => {
         const modal = document.getElementById("modal_add_tool");
-        modal.style.display = "none";
+        // modal.style.display = "none";
+        if (e.target == modal) {
+            // Should remove some comments
+            // modal.style.display = "none";
+            // Hides modal if you click outside of the modal__content box
+            setModalVisible(false)
+        }
     }
     //--------opening and closing modals----------
 
@@ -85,7 +94,51 @@ export default function App() {
                     ? <div className="success-message">{successMessage}</div>
                     : ''
             }
-            <div id='modal_add_tool' class='modal'>
+
+
+            {
+                modalVisible ?
+                    <div id='modal_add_tool' className='modal'>
+                        <div className='modal__content'>
+                            <h1 >Add Tools</h1>
+                            <form action="/api/tools/add" method="post" onSubmit={handleSubmit} >
+
+                                Name:<br />
+                                <input type="text" name="name"
+                                    value={values.name}
+                                    onChange={handleChange}
+                                />
+                                <br />
+
+                                Manufacturer:<br />
+                                <input type="text" name="manufacturer"
+                                    value={values.manufacturer}
+                                    onChange={handleChange}
+                                />
+                                <br />
+
+                                Vibration magnitude:<br />
+                                <input type="text" name="vibration_rating"
+                                    value={values.vibration_rating}
+                                    onChange={handleChange}
+                                />
+                                <br />
+
+                                Noise level:<br />
+                                <input type="text" name="noise_rating"
+                                    value={values.noise_rating}
+                                    onChange={handleChange}
+                                />
+                                <br />
+                                <button >Add tool</button>
+
+                            </form>
+                        </div>
+                    </div>
+                    :
+                    <></>
+            }
+            {/* <div id='modal_add_tool' className='modal'>
                 <div className='modal__content'>
                     <h1 >Add Tools</h1>
                     <form action="/api/tools/add" method="post" onSubmit={handleSubmit} >
@@ -117,12 +170,11 @@ export default function App() {
                             onChange={handleChange}
                         />
                         <br />
-
-                        <button onClick={hideModal}>Add tool</button>
+                        <button >Add tool</button>
 
                     </form>
                 </div>
-            </div>
+            </div> */}
         </>
 
 
