@@ -3,7 +3,7 @@
 {{-- Head section --}}
 @section('head')
   <title>VibeCzech | Admin</title>
-  <link rel="stylesheet" href="{{ asset('css/modal.css')}}">
+  @vite('resources/css/modal.css')
 @endsection
 
 
