@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Register from './Register';
 
-
 export default function App() {
 
-  const [modalVisible, setModalVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false);
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+  }, []);
 
   const showModal = () => {
     console.log('showing modal')
@@ -25,6 +33,10 @@ export default function App() {
       setModalVisible(false)
     }
   }
+
+  const getCurrentUser = async function () {
+    console.log(user);
+  };
 
   return (
 
@@ -46,13 +58,15 @@ export default function App() {
         <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
         <span id='register' onClick={showModal}>Register</span>
+        <span id='get-user' onClick={getCurrentUser}>Get current user</span>
       </form>
 
       {
         modalVisible ?
           <div id='modal' className='modal' onClick={hideModal}>
             <div className='modal__content registration-modal'>
-              <Register />
+              <Register
+                currentUser={user} />
             </div>
           </div>
           :
