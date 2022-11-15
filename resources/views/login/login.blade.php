@@ -13,7 +13,7 @@
 <body>
     <div id='root' class='container'>
         @viteReactRefresh
-        @vite('resources/js/registration-modal.jsx')
+        @vite('resources/js/Login.jsx')
     </div>
 </body>
 
