@@ -2,7 +2,6 @@
 
 
 html {
-    /* background-color: #000000bf; */
     background-color: #000000;
     color: #ffffff;
     font-family: 'Saira';
@@ -10,6 +9,8 @@ html {
 
 body {
     margin: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 a {
@@ -37,7 +38,8 @@ button:hover {
     bottom: 0;
     height: 40px;
     margin: 0 auto;
-    position: fixed;
+    margin-top: 100vh;
+    /* position: fixed; */
     width: 100%;
 }
 

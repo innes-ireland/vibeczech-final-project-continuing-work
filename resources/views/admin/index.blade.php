@@ -9,7 +9,6 @@
 
 {{-- Content section --}}
 @section('content')
-
 <div class="admin-index">
   
 
