@@ -3,8 +3,11 @@
 {{-- Head section --}}
 @section('head')
   <title>VibeCzech | Login</title>
-  <link rel="stylesheet" href="{{ asset('css/modal.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/login.scss')}}">
+  {{-- <link rel="stylesheet" href="{{ asset('css/modal.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/login.scss')}}"> --}}
+
+  @vite('resources/css/modal.css')
+  @vite('resources/css/login.scss')
 @endsection
 
 

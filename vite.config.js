@@ -7,6 +7,9 @@ export default defineConfig({
     laravel({
       input: [
         'resources/css/app.css',
+        'resources/css/login.scss',
+        'resources/css/modal.css',
+        'resources/css/universal-index.css',
         'resources/js/app.js',
         'resources/js/registration-modal.jsx',
         'resources/js/add-tool-modal.jsx',
