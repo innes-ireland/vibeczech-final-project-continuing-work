@@ -8,6 +8,7 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false)
 
   const showModal = () => {
+    console.log('showing modal')
     // Should remove some comments
     // const modal = document.getElementById("modal");
     // This must be inside of the function because at the point it's called in the code, the return has not run yet and will return null
@@ -44,7 +45,7 @@ export default function App() {
         <button id='login' name='login'>Login</button>
         <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
-        <a href='#' id='register' onClick={showModal}>Register</a>
+        <span id='register' onClick={showModal}>Register</span>
       </form>
 
       {
