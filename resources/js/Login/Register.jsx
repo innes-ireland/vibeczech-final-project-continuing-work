@@ -27,6 +27,7 @@ export default function Register(props) {
       // get the (already JSON-parsed) response data
       const response_data = response.data;
       props.setModalVisible(false);
+      window.location.replace('/worker');
     } catch (error) {
       console.log(error);
       // if the response code is not 2xx (success)

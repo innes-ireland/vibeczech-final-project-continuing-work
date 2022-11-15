@@ -28,8 +28,9 @@ export default function App() {
         const response = await axios.get('/api/user');
         const data = response.data;
         console.log(data);
-
         setUser(data);
+        console.log('Can we put the is_admin if else here?')
+        console.log(data);
       }
       catch (err) {
         console.log(err);
