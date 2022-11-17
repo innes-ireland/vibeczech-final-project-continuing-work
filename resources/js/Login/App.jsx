@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 import Register from './Register';
 
@@ -24,11 +24,11 @@ export default function App() {
       // get the (already JSON-parsed) response data
       const response_data = response.data;
 
-      try {
+      try { // ++Aidan++ This seems to be used to fetch user from db and re-route based on is_admin
         const response = await axios.get('/api/user');
         const data = response.data;
         console.log(data);
-        setUser(data);
+        setUser(data); // ++Aidan++ Is this necessary? The user variable never seems to be used
         console.log('Can we put the is_admin if else here?')
         data.is_admin
           ?
@@ -54,7 +54,7 @@ export default function App() {
     }
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event) => { // ++Aidan++ The goal here seems to be building an object for use in the handeSubmit function
     setValues(previous_values => {
       return ({
         ...previous_values,

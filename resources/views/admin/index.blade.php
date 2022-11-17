@@ -13,7 +13,11 @@
 <div class="admin-index">
  
   
-  <h1>admin index content goes here</h1>
+  {{-- <h1>admin index content goes here</h1> --}}
+  <div id='root'>
+    @viteReactRefresh
+    @vite('resources/js/Admin.jsx')
+  </div>
 
   <div id='add_tool_modal' >
         @viteReactRefresh
