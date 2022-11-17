@@ -15,6 +15,8 @@
   
   <h1>admin index content goes here</h1>
 
+  <h2>{{ \Auth::id() }}</h2>
+
   <div id='add_tool_modal' >
         @viteReactRefresh
         @vite('resources/js/add-tool-modal.jsx')    
