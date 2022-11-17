@@ -7,6 +7,7 @@ export default function App() {
 
     const [modalVisible, setModalVisible] = useState(false)
     const [workers, setWorkers] = useState([]);
+    const [list, setList] = useState([]);
 
     //-------this section displays and hides the modal----------
     const showModal = () => {
@@ -37,6 +38,7 @@ export default function App() {
         // Getting data with axios
         try {
             const response = await axios.get('/api/work-party');
+            console.log(response.data)
             setWorkers(response.data);
         } catch (err) {
             console.log(err);
@@ -44,22 +46,38 @@ export default function App() {
     }
 
     useEffect(() => {
+        console.log('hello')
         loadWorkers();
     }, [])
 
+
+
+
+    // console.log(workers[0].username)
 
     return (
         <>
             < a href='#' id='modalTrigger' onClick={showModal} > Create Work Party</a >
             {
                 modalVisible ?
-                    <div id='modal_work_party' class='modal' onClick={hideModal}>
+                    <div id='modal_work_party' className='modal' onClick={hideModal}>
                         <div className='modal__content'>
                             <h1 >Work Party</h1>
 
                             {
+
+
                                 workers.map(worker => {
-                                    return <div>{worker.first_name} {worker.last_name}</div>
+                                    return <div className='users_display'><p>{worker.first_name} {worker.last_name}</p><button onClick={() => addTodo(input)}>Add</button>
+                                        {/* <ul>
+                                            {list.map((todo) => (
+                                                <li key={todo.id}>
+                                                    {todo.todo}
+                                                    <button onClick={() => deleteTodo(todo.id)}>&times;</button>
+                                                </li>
+                                            ))}
+                                        </ul>*/}
+                                    </div>
                                 })
                             }
                             <button id='button_add_party' onClick={hideModal}>Create Work Party</button>
