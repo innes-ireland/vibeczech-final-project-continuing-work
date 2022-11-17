@@ -92,7 +92,7 @@ export default function App() {
 
   return (
     <>
-      < a href='#' id='modalTrigger' onClick={showModal} > Add tools</a >
+      < a href='#' id='modalTrigger' onClick={showModal} > Add tool</a >
       {
         successMessage
           ? <div className="success-message">{successMessage}</div>
@@ -104,7 +104,7 @@ export default function App() {
         modalVisible ?
           <div id='modal_add_tool' className='modal' onClick={hideModal}>
             <div className='modal__content'>
-              <h1 >Add Tools</h1>
+              <h1 >Add Tool</h1>
               <form action="/api/tools/add" method="post" onSubmit={handleSubmit} >
 
                 Name:<br />
