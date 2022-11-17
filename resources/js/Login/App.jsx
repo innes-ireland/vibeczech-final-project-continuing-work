@@ -63,10 +63,12 @@ export default function App() {
     });
   }
 
-  const getCurrentUser = async function () {
-    const response = await axios('/api/user');
-    console.log(response);
-  };
+  // ++++++++++++++++Possibly useful+++++++++++++++++++
+  //
+  // const getCurrentUser = async function () {
+  //   const response = await axios('/api/user');
+  //   console.log(response);
+  // };
 
   const hideModal = (e) => {
     if (e.target == modal) {
@@ -83,28 +85,22 @@ export default function App() {
 
   return (
 
-    // replace most of this with generic login page shit
     <div>
       <h1>- Login -</h1>
       <form action="/login" method="post" onSubmit={handleSubmit}>
         <label htmlFor='email'>Email</label>
-        <br /> {/* All breaks should eventually be replaced with styling */}
         <input type='text' id='email' name='email' value={values.email} onChange={handleChange} />
-        <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
         <label htmlFor='password'>Password</label>
-        <br /> {/* All breaks should eventually be replaced with styling */}
         <input type='password' id='password' name='password' value={values.password} onChange={handleChange} />
-        <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
         <button id='login' name='login'>Login</button>
-        <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
-        <span id='register' onClick={showModal}>Register</span>
-        <span id='get-user' onClick={async function () {
+        <a href='#' className='register'><span id='register' onClick={showModal}>Register</span></a>
+        <a href='#'><span id='get-user' onClick={async function () {
           const response = await axios('/api/user');
           console.log(response);
-        }}>Get current user</span>
+        }}>Get current user</span></a>
       </form>
 
       {

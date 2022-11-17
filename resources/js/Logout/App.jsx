@@ -28,7 +28,7 @@ const App = () => {
 
   return (
 
-    <p onClick={handleLogout}>LOGOUT</p>
+    <a href='#'><p className='logout-button' onClick={handleLogout}>LOGOUT</p></a>
     // !user ? null :
 
     //   <>
