@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index']);
 
-Route::get('/admin', [AdminController::class, 'index']);
+// // get to admin without being logged in as an admin
+// Route::get('/admin', [AdminController::class, 'index']);
+
+// get to admin ONLY IF logged in as an admin
+// other pertinent file for this shit (look at Gate): 
+//    app/Providers/AuthServiceProvider.php
+Route::get('/admin', [AdminController::class, 'index'])->middleware('can:admin');
 
 Route::get('/worker', [WorkerController::class, 'detail'])->name('worker.detail');
 Route::get('/logout', [WorkerController::class, 'logout']);
