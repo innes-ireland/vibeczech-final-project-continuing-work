@@ -7,7 +7,9 @@ export default function App() {
 
     const [modalVisible, setModalVisible] = useState(false)
     const [workers, setWorkers] = useState([]);
-    const [list, setList] = useState([]);
+    const [party, setParty] = useState([]);
+
+
 
     //-------this section displays and hides the modal----------
     const showModal = () => {
@@ -26,6 +28,7 @@ export default function App() {
         }
     }
     //------------------
+
 
 
     //fetch to get data to display workers
@@ -53,7 +56,80 @@ export default function App() {
 
 
 
-    // console.log(workers[0].username)
+    //-------list-----------
+    const addParty = (temp) => {
+
+        const newParty = {
+            id: temp.id,
+            name: temp.first_name,
+            last_name: temp.last_name,
+
+
+        };
+
+        let new_arr = party;
+
+        setParty(new_arr.concat(newParty));
+        const new_workers = workers.filter((worker) => worker.id !== newParty.id);
+
+        setWorkers(new_workers)
+
+        // let new_workers = workers.unshift(newParty)
+
+    };
+
+    const deleteParty = (id) => {
+        // Filter out todo with the id
+        const newParty = party.filter((temp2) => temp2.id !== id);
+
+        setParty(newParty);
+
+    };
+    //-------list-----------
+
+    console.log('below im logging the current party')
+
+
+
+
+
+
+    const handleSubmit = async (event) => {
+
+
+        event.preventDefault();
+        console.log('is this working')
+
+        // with axios
+        const response = await fetch('/api/new-work-party', {
+            method: 'POST',
+            body: JSON.stringify(party),
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        });
+
+        // parse the response as JSON
+        const response_data = await response.json();
+
+        // if the response code is not 2xx (success)
+        if (Math.floor(response.status / 100) !== 2) {
+            switch (response.status) {
+                case 422:
+                    // handle validation errors here
+                    console.log('VALIDATION FAILED:', response_data.errors);
+                    break;
+                default:
+                    console.log('UNKNOWN ERROR', response_data);
+                    break;
+            }
+        }
+    }
+
+
+
 
     return (
         <>
@@ -63,24 +139,37 @@ export default function App() {
                     <div id='modal_work_party' className='modal' onClick={hideModal}>
                         <div className='modal__content'>
                             <h1 >Work Party</h1>
+                            <div>
+                                <ul>
+                                    {party.map(bla => {
+                                        return <li key={bla.id}>
+                                            <p>{bla.name} {bla.last_name}</p>
+                                            <button onClick={() => deleteParty(bla.id)}>&times;</button>
+                                        </li>
+                                    })}
+                                </ul>
+                                {/* below is POST request to send data to database */}
+                                <form action="/api/new-work-party" method="post" >
+                                    <button id='button_add_party'
+                                        onClick={handleSubmit}
+                                    >Create Work Party</button>
+                                </form>
+                            </div>
 
                             {
 
 
                                 workers.map(worker => {
-                                    return <div className='users_display'><p>{worker.first_name} {worker.last_name}</p><button onClick={() => addTodo(input)}>Add</button>
-                                        {/* <ul>
-                                            {list.map((todo) => (
-                                                <li key={todo.id}>
-                                                    {todo.todo}
-                                                    <button onClick={() => deleteTodo(todo.id)}>&times;</button>
-                                                </li>
-                                            ))}
-                                        </ul>*/}
+                                    return <div className='users_display' key={worker.id}>
+                                        <p>{worker.first_name} {worker.last_name}</p>
+                                        <button onClick={() => addParty(worker)
+
+                                        }>Add</button>
+
                                     </div>
                                 })
                             }
-                            <button id='button_add_party' onClick={hideModal}>Create Work Party</button>
+
                         </div>
                     </div>
                     :

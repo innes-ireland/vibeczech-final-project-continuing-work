@@ -47,7 +47,7 @@ class User extends Authenticatable
 
     public function workTeam()
     {
-        return $this->hasMany(WorkTeam::class);
+        return $this->belongsToMany(WorkTeam::class);
     }
 
     public function selfAssessment()
