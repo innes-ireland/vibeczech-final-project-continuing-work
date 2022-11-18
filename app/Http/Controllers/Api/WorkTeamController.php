@@ -17,11 +17,11 @@ class WorkTeamController extends Controller
         $data = $request->all();
 
         if (empty($data['id'])) {
-            // creating a new tool
+            // creating a new workteam
             $workTeam = new WorkTeam;
 
         } else {
-            // updating an existing mission
+            // updating an existing workteam
             $workTeam = WorkTeam::findOrFail($data['id']);
         }
        
@@ -36,16 +36,12 @@ $workTeam->save();
             
             
         }
-        // $data->users()->attach($userId);
-       
-
-        // save the object into the database
         
 
         // respond with data that the frontend might find useful
         return [
             'status' => 'success',
-            // 'tool' => $tool
+            
         ];
     }
 }
