@@ -17,6 +17,8 @@ export default defineConfig({
         'resources/js/add-tool-modal.jsx',
         'resources/js/work-party-modal.jsx',
         'resources/js/Logout.jsx',
+        'resources/js/Worker.jsx',
+
       ],
       refresh: true,
     }),

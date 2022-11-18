@@ -16,6 +16,15 @@
   
   <div class="exposure-record"><p>placeholder er</p></div>
 
+  <div id="admin_button"></div>
+    @viteReactRefresh
+    @vite('resources/js/Worker.jsx')
+    
+{{-- @if(Auth::user()->type == 'is_admin')
+<a href="/" class="btn btn-default"> ADD</a>
+@endif --}}
+
+
 </div>
 @endsection
 
