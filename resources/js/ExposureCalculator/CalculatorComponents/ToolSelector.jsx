@@ -1,34 +1,27 @@
 import axios from "axios"
+import { useEffect, useState } from "react"
 
 
 export default function ToolSelector({ vibrationMagnitude, setVibrationMagnitude }) {
 
+    const [tools, setTools] = useState([]);
     const handleToolChange = (e) => {
         setVibrationMagnitude(e.target.value)
 
     }
 
 
+    const url = "http://localhost/phpmyadmin/index.php?route=/sql&db=vibeczech&table=tools"
+    const getToolData = () => {
+        axios.get(`${url}`).then((response) => {
+            const tools = response.data
+            console.log(tools)
+            setTools(tools)
 
-    const tools = [{
-        id: 1,
-        name: 'drill',
-        vibration: 100
-    },
-    {
-        id: 2,
-        name: 'mower',
-        vibration: 110
-    },
-    {
-        id: 3,
-        name: 'chainsaw',
-        vibration: 120,
+        }
+        )
     }
-
-
-
-    ] // this is hardcoded to represent an array of objects retrieved from database
+    useEffect(() => { getToolData }, [])
 
 
 
@@ -39,7 +32,7 @@ export default function ToolSelector({ vibrationMagnitude, setVibrationMagnitude
             <option value='null'> </option>
             {
                 tools.map((tool) => {
-                    return <option value={tool.vibration}> {tool.name}</option>
+                    return <option value={tool.vibration_level}> {tool.name}</option>
 
                 })}
         </select>
