@@ -43,7 +43,7 @@ const Logout = () => {
         :
         <div>
           <p>Hi, {currentUser.username}!</p>
-          <p onClick={handleLogout}>LOGOUT</p>
+          <p id='logout' onClick={handleLogout}>LOGOUT</p>
         </div>}
 
     </UserContext.Provider>
