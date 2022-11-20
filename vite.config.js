@@ -11,6 +11,7 @@ export default defineConfig({
         'resources/css/worker-detail.scss',
         'resources/css/modal.css',
         'resources/css/universal-index.css',
+        'resources/js/Admin.jsx',
         'resources/js/app.js',
         'resources/js/registration-modal.jsx',
         'resources/js/add-tool-modal.jsx',
