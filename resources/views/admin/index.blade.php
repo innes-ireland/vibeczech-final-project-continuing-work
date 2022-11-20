@@ -18,6 +18,8 @@
     @vite('resources/js/Admin.jsx')
   </div>
 
+  <h2>{{ \Auth::id() }}</h2>
+
   <div id='add_tool_modal' >
         @viteReactRefresh
         @vite('resources/js/add-tool-modal.jsx')    
