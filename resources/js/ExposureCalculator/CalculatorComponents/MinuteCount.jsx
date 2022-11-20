@@ -1,27 +1,25 @@
-export default function HourCount({ minuteCount, setMinuteCount }) {
+import { useState } from "react";
 
-
-
+export default function MinuteCount({ minuteCount, setMinuteCount }) {
 
     function changeMinute(amount) {
-        if (minuteCount >= 0 && minuteCount < 45)
+        if (minuteCount < 45 && minuteCount >= 0) {
             setMinuteCount(minuteCount => minuteCount + amount)
-
+        }
     }
 
-    function resetHourCount() {
-        setHourCount(0)
-    }
 
+    function resetMinuteCount() {
+        setMinuteCount(0)
+
+    }
 
     return (
         <>
-
-            <button onClick={() => changeMinute(15)}> +15 minutes</button>
-            <span>{hourCount}</span>
-            <button onClick={() => changeMinute(-15)}> -15 minutes </button>
-            <button onClick={() => resetHourCount}> reset</button>
+            <button onClick={() => changeMinute(15)}>+15 min </button>
+            <span> {minuteCount}</span>
+            <button onClick={() => changeMinute(-15)}>-15 min</button>
+            <button onClick={() => resetMinuteCount()}> reset</button>
         </>
-
     )
 }

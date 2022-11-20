@@ -1,16 +1,48 @@
+import axios from "axios"
 
 
-export default function ToolSelector(vibrationMagnitude, setVibrationMagnitude) {
+export default function ToolSelector({ vibrationMagnitude, setVibrationMagnitude }) {
 
+    const handleToolChange = (e) => {
+        setVibrationMagnitude(e.target.value)
 
-    const handleToolSelected = (e) => {
-        setTool({ ...tool, vibration_rating: e.target.vibration_rating })
     }
 
-    return (
-        <select name="tool" onchange={handleToolSelected} value={vibrationMagnitude.vibration_rating}>
-            <option>{tool.name}</option>
-        </select>
-    )
 
+
+    const tools = [{
+        id: 1,
+        name: 'drill',
+        vibration: 100
+    },
+    {
+        id: 2,
+        name: 'mower',
+        vibration: 110
+    },
+    {
+        id: 3,
+        name: 'chainsaw',
+        vibration: 120,
+    }
+
+
+
+    ] // this is hardcoded to represent an array of objects retrieved from database
+
+
+
+
+
+    return (
+        <select onChange={handleToolChange}>
+            <option value='null'> </option>
+            {
+                tools.map((tool) => {
+                    return <option value={tool.vibration}> {tool.name}</option>
+
+                })}
+        </select>
+
+    );
 }
