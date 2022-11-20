@@ -28,9 +28,6 @@ export default function App() {
 
     //---------fetch to get data to display workers------------
     const loadWorkers = async () => {
-        // Getting data with fetch:
-        // const response = await fetch('/api/work-party');
-        // const data = await response.json();
 
         // Getting data with axios
         try {
@@ -45,7 +42,6 @@ export default function App() {
         loadWorkers();
     }, [])
     //---------fetch to get data to display workers------------
-
 
 
     //-------add and remove function-----------
@@ -127,6 +123,7 @@ export default function App() {
                                         </li>
                                     })}
                                 </ul>
+                                <div>Job: <input type="text" /></div>
                                 {/* below is POST request to send data to database */}
                                 <form action="/api/new-work-party" method="post" >
                                     <button id='button_add_party'
