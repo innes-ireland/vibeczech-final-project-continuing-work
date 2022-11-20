@@ -6,11 +6,15 @@ export default function Admin() {
 
     const [user, setUser] = useState(null);
 
-    const getCurrentUser = async function () {
+    const getCurrentUser = async () => {
         const response = await axios('/api/user');
         setUser(response.data)
         console.log(response);
     };
+
+    const getAllUsers = async () => {
+        const response = await axios
+    }
 
     useEffect(() => {
         getCurrentUser();
