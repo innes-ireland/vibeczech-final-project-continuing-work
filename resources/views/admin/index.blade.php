@@ -37,7 +37,12 @@
     </div>
   </div>
 
-  <div class="graph-container"></div>
+  <div class="exposure-calculator">
+    <div id='exposure_calculator'>
+    @viteReactRefresh
+    @vite('resources/js/exposure-calculator.jsx')
+    </div>
+  </div>
 
 </div>
 

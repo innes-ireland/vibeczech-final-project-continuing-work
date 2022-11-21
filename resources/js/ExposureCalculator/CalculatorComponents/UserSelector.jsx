@@ -1,4 +1,4 @@
-export default function userSelector({ user, setUser }) {
+export default function userSelector({ user, setUser, workParty }) {
 
   const handleUserChange = (e) => {
     setUser(e.target.value)
@@ -39,7 +39,7 @@ export default function userSelector({ user, setUser }) {
     <select onChange={handleUserChange}>
       <option value='null'> </option>
       {
-        users((user) => {
+        workParty.map((user) => {
           return <option value={user.name}> {user.name}</option>
 
         })}

@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // POST  for adding tools to database 
 
 Route::post('/tools/add', [App\Http\Controllers\Api\AddToolController::class, 'store']);
+Route::get('/tools', [App\Http\Controllers\Api\ToolSelectorController::class, 'getTool']);
 Route::get('/work-party', [App\Http\Controllers\Api\WorkPartyController::class, 'index']);
 Route::post('/new-work-party', [App\Http\Controllers\Api\WorkTeamController::class, 'store']);
 Route::get('/list-work-parties', [App\Http\Controllers\AdminController::class, 'workPartyApi']);

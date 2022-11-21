@@ -1,13 +1,14 @@
-import './App.css';
-import ToolSelector from './components/ToolSelector';
-import HourCount from './components/HourCount';
-import MinuteCount from './components/MinuteCount';
+import ToolSelector from './CalculatorComponents/ToolSelector';
+import HourCount from './CalculatorComponents/HourCount';
+import MinuteCount from './CalculatorComponents/MinuteCount';
 import Calculator from './CalculatorComponents/Calculator';
 import UserSelector from './CalculatorComponents/UserSelector';
 import { useState } from 'react';
 import SelectorBox from './CalculatorComponents/SelectorBox';
 import SaveToPlan from './CalculatorComponents/SaveToPlan';
 import DisplayGraph from './CalculatorComponents/DisplayGraph';
+import WorkTeamSelector from './CalculatorComponents/WorkPartySelector';
+
 
 
 function App() {
@@ -17,23 +18,26 @@ function App() {
     const [vibrationMagnitude, setVibrationMagnitude] = useState(0);
     const [user, setUser] = useState(0);
     const [product, setProduct] = useState(0);
-    const [planObjects, setPlanObjects] = useState([]) //default state is an empty array 
+    const [planObjects, setPlanObjects] = useState([]) //default state is an empty array
     const [graphData, setGraphData] = useState({})
+    const [workTeams, setWorkTeams] = useState([])
 
 
 
     return (
         <div className="App">
-            <SelectorBox>
-                <UserSelector user={user} setUser={setUser} />
-                <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
-                <HourCount hourCount={hourCount} setHourCount={setHourCount} />
-                <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
-            </SelectorBox>
+            {/* <Wrapper> */}
+            {/* <SelectorBox> */}
+            <WorkTeamSelector workTeams={workTeams} setWorkTeams={setWorkTeams} />
+            <UserSelector user={user} setUser={setUser} workTeams={workTeams} />
+            <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
+            <HourCount hourCount={hourCount} setHourCount={setHourCount} />
+            <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
+            {/* </SelectorBox> */}
             <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
             <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} />
             <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
-
+            {/* </Wrapper> */}
 
 
 
