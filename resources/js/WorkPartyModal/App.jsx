@@ -8,6 +8,8 @@ export default function App() {
     const [modalVisible, setModalVisible] = useState(false)
     const [workers, setWorkers] = useState([]);
     const [party, setParty] = useState([]);
+    const [values, setValues] = useState([]);
+
 
 
     //-------this section displays and hides the modal----------
@@ -70,15 +72,26 @@ export default function App() {
 
 
 
+    const handleChange = (event) => {
+        setValues(previous_values => {
+            return ({
+                ...previous_values,
+                [event.target.name]: event.target.value
+            });
+        });
+    }
+
+
     //---------POST request---------------
     const handleSubmit = async (event) => {
 
         event.preventDefault();
 
+        const array = [party, values]
         // with axios
         const response = await fetch('/api/new-work-party', {
             method: 'POST',
-            body: JSON.stringify(party),
+            body: JSON.stringify(array),
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json',
@@ -104,8 +117,6 @@ export default function App() {
     }
     //---------POST request---------------
 
-
-
     return (
         <>
             < a href='#' id='modalTrigger' onClick={showModal} > Create Work Party</a >
@@ -115,8 +126,8 @@ export default function App() {
                         <div className='modal__content'>
                             <h1 >Work Party</h1>
                             <div>
-                                <div>Job: <input type="text" name="job" /></div>
-                                <div>Date: <input type="date" name="work_date"></input></div>
+                                <div>Short job description: <input type="text" name="job" value={values.job} onChange={handleChange} /></div>
+                                <div>Date: <input type="date" name="work_date" value={values.work_date} onChange={handleChange}></input></div>
                                 <ul>
                                     {party.map(user => {
                                         return <li key={user.id}>

@@ -16,7 +16,8 @@ class WorkTeamController extends Controller
 
         $data = $request->all();
 
-        if (empty($data['id'])) {
+        
+        if (empty($data[0]['id'])) {
             // creating a new workteam
             $workTeam = new WorkTeam;
 
@@ -24,18 +25,18 @@ class WorkTeamController extends Controller
 
         } else {
             // updating an existing workteam
-            $workTeam = WorkTeam::findOrFail($data['id']);
+            $workTeam = WorkTeam::findOrFail($data[0]['id']);
         }
        
  
-        
+        // dd($request->input('job'));
        
-         $workteam->job = $request->get('job');
-        $workteam->work_date = $request->get('work_date');
+         $workTeam->job = $data[1]['job'];
+        $workTeam->work_date = $data[1]['work_date'];
         $workTeam->save();
         // fill the object with data from request
         
-        foreach ($data as $value) {
+        foreach ($data[0] as $value) {
             // $user = User::find(1);
             // dd($value);
             $workTeam->users()->attach($value['id']);

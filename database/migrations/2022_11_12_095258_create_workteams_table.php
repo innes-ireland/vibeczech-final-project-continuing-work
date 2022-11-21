@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('workteams', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('job')->nullable();;
-            $table->dateTime('work_date')->nullable();;
+            $table->string('job')->nullable();
+            $table->dateTime('work_date')->nullable();
         });
     }
 
