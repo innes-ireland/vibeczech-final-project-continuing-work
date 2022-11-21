@@ -6,7 +6,6 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 
 
-
 export default function DisplayGraph({ planObjects, graphData, setGraphData }) {
 
 
@@ -67,12 +66,13 @@ export default function DisplayGraph({ planObjects, graphData, setGraphData }) {
 
     }, [planObjects])
     return (
-
         <Bar data={{
             labels: labels,
             datasets: [dataSets]
         }}
         />
+
+
 
     )
 
