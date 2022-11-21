@@ -1,4 +1,4 @@
-export default function userSelector({ user, setUser }) {
+export default function userSelector({ user, setUser, workParty }) {
 
     const handleUserChange = (e) => {
         setUser(e.target.value)
@@ -7,29 +7,9 @@ export default function userSelector({ user, setUser }) {
 
 
 
-    const users = [{
-        id: 1,
-        name: 'Innes',
-
-    },
-    {
-        id: 2,
-        name: 'Aidan',
-
-    },
-    {
-        id: 3,
-        name: 'Briana',
-
-    },
-    {
-        id: 4,
-        name: 'Sabina',
-    }
 
 
-
-    ] // this is hardcoded to represent an array of objects retrieved from database
+    // this is hardcoded to represent an array of objects retrieved from database
 
 
 
@@ -39,7 +19,7 @@ export default function userSelector({ user, setUser }) {
         <select onChange={handleUserChange}>
             <option value='null'> </option>
             {
-                users.map((user) => {
+                workParty.map((user) => {
                     return <option value={user.name}> {user.name}</option>
 
                 })}
