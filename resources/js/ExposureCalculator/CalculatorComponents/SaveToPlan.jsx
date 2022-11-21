@@ -21,6 +21,10 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
         // console.log(new_array)
 
     };
+    function handleRemoveWorker(id) {
+        console.log(id)
+
+    }
 
 
     return (
@@ -31,8 +35,9 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
                 {planObjects.map(planObject => {
 
                     return <li>
-                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel}
+                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel} <button type="button" onClick={handleRemoveWorker(planObject.id)} > X</button>
                     </li>
+
 
                 })}
 

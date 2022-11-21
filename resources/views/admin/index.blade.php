@@ -32,7 +32,12 @@
     </div>
   </div>
 
-  <div class="graph-container"></div>
+  <div class="exposure-calculator">
+    <div id='exposure_calculator_modal'>
+    @viteReactRefresh
+    @vite('resources/js/exposure-calculator-modal.jsx')
+    </div>
+  </div>
 
 </div>
 
