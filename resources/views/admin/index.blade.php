@@ -18,17 +18,22 @@
     @vite('resources/js/Admin.jsx')
   </div>
 
-  <h2>{{ \Auth::id() }}</h2>
+  {{-- <h2>{{ \Auth::id() }}</h2> --}}
 
   <div id='add_tool_modal' >
-        @viteReactRefresh
-        @vite('resources/js/add-tool-modal.jsx')    
+    @viteReactRefresh
+    @vite('resources/js/add-tool-modal.jsx')    
   </div>
   
   <div class="work-parties-container">
     <div id='work_party_modal' >
-          @viteReactRefresh
-          @vite('resources/js/work-party-modal.jsx')    
+      @viteReactRefresh
+      @vite('resources/js/work-party-modal.jsx')    
+    </div>
+    
+    <div id='current_work_parties'>
+      @viteReactRefresh
+      @vite('resources/js/currentWorkTeams')
     </div>
   </div>
 

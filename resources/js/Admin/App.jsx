@@ -12,10 +12,6 @@ export default function Admin() {
         console.log(response);
     };
 
-    const getAllUsers = async () => {
-        const response = await axios
-    }
-
     useEffect(() => {
         getCurrentUser();
     }, [])
