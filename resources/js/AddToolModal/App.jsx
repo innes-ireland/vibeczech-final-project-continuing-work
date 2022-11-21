@@ -26,6 +26,19 @@ export default function App() {
         // modal.style.display = "block";
     }
 
+    // const hideModal = (e) => {
+    //     const modal = document.getElementById("modal_add_tool");
+    //     const button = document.getElementById("button_add_tool");
+    //     // modal.style.display = "none";
+    //     if (e.target == modal) {
+    //         // Should remove some comments
+    //         // modal.style.display = "none";
+    //         // Hides modal if you click outside of the modal__content box
+    //         setModalVisible(false)
+    //     } else if (e.target == button) {
+    //         setModalVisible(false)
+    //     }
+
     const hideModal = (e) => {
         e.preventDefault()
         const modal = document.getElementById("modal_add_tool");
@@ -93,7 +106,7 @@ export default function App() {
 
     return (
         <>
-            < a href='#' id='modalTrigger' onClick={showModal} > Add tools</a >
+            < a href='#' id='modalTrigger' onClick={showModal} > Add tool</a >
             {
                 successMessage
                     ? <div className="success-message">{successMessage}</div>
