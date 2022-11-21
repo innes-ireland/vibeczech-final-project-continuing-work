@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\WorkTeam;
 
 class AdminController extends Controller
 {
@@ -25,8 +25,7 @@ class AdminController extends Controller
 
     public function workPartyApi()
     {
-        $userList = User::with('')->where('is_admin', 0)->get();
-        
-        return $userlist;
+        $workTeams = WorkTeam::with('users')->get();
+        return $workTeams;        
     }
 }
