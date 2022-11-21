@@ -94,19 +94,14 @@ export default function Login() {
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         <h1>- Login -</h1>
-        <form action="/login" method="post" onSubmit={handleSubmit}>
+        <form id='login-form' action="/login" method="post" onSubmit={handleSubmit}>
           <label htmlFor='email'>Email</label>
-          <br /> {/* All breaks should eventually be replaced with styling */}
           <input type='text' id='email' name='email' value={values.email} onChange={handleChange} />
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <label htmlFor='password'>Password</label>
-          <br /> {/* All breaks should eventually be replaced with styling */}
           <input type='password' id='password' name='password' value={values.password} onChange={handleChange} />
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <button id='login' name='login'>Login</button>
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <span id='register' onClick={showModal}>Register</span>
           <span id='get-user' onClick={async function () {

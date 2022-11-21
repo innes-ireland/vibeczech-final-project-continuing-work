@@ -53,30 +53,57 @@ export default function Register(props) {
   }
 
   return (
-    <form action="/register" method="post" onSubmit={handleSubmit}>
+    <form id='register-form' action="/register" method="post" onSubmit={handleSubmit}>
+      <div className='register__container'>
 
-      First name:<br />
-      <input type="text" name="first_name" value={values.first_name} onChange={handleChange} /><br />
+        <div className='register__container-name_label'>
+          <label htmlFor='first_name'>First name:</label>
+          <label htmlFor='last_name'>Surname:</label>
+        </div>
 
-      Surname:<br />
-      <input type="text" name="last_name" value={values.last_name} onChange={handleChange} /><br />
 
-      Email:<br />
-      <input type="email" name="email" value={values.email} onChange={handleChange} /><br />
+        <div className='register__container-name_input'>
+          <input type="text" name="first_name" value={values.first_name} onChange={handleChange} />
+          <input type="text" name="last_name" value={values.last_name} onChange={handleChange} />
+        </div>
 
-      Username:<br />
-      <input type="text" name="username" value={values.username} onChange={handleChange} /><br />
 
-      Phone:<br />
-      <input type="text" name="phone_number" value={values.phone_number} onChange={handleChange} /><br />
+        <div className='register__container-info_label'>
+          <label htmlFor='username'>Username:</label>
+          <label htmlFor='email'>Email:</label>
+        </div>
 
-      Password:<br />
-      <input type="password" name="password" value={values.password} onChange={handleChange} /><br />
 
-      Confirm Password:<br />
-      <input type="password" name="password_confirmation" value={values.password_confirmation} onChange={handleChange} /><br />
+        <div className='register__container-info_input'>
+          <input type="text" name="username" value={values.username} onChange={handleChange} />
+          <input type="email" name="email" value={values.email} onChange={handleChange} />
+        </div>
 
-      <button>Register</button>
+
+        <div className='register__container-phone_label'>
+          <label htmlFor='phone_number'>Phone:</label>
+        </div>
+
+
+        <div className='register__container-phone_input'>
+          <input type="text" name="phone_number" value={values.phone_number} onChange={handleChange} />
+        </div>
+
+
+        <div className='register__container-pw_label'>
+          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password_confirmation'>Confirm:</label>
+        </div>
+
+
+        <div className='register__container-pw_input'>
+          <input type="password" name="password" value={values.password} onChange={handleChange} />
+          <input type="password" name="password_confirmation" value={values.password_confirmation} onChange={handleChange} />
+        </div>
+
+      </div>
+
+      <button id='register_button'>Register</button>
 
     </form>
   );

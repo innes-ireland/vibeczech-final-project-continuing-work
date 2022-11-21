@@ -5,6 +5,7 @@
   <title>VibeCzech | Login</title>
   @vite('resources/css/modal.css')
   @vite('resources/css/login.scss')
+  @vite('resources/css/register.scss')
 @endsection
 
 

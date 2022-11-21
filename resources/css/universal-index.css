@@ -71,11 +71,20 @@ input {
     width: 90%;
 }
 
-.logout-button {
-    margin-right: 4em;
-    margin-top: 1.7em;
+#logout {
+    color: #dc4c18;
+}
+
+#logout:hover {
+    color: #ffffff;
+    cursor: pointer;
 }
 
 p {
     font-family: 'Open Sans', Tahoma;
+}
+
+#root-logout {
+    margin-right: 4em;
+    margin-top: 0.3em;
 }
