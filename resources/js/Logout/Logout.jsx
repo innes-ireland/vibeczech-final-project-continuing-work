@@ -42,7 +42,7 @@ const Logout = () => {
         <></>
         :
         <div>
-          <p>Hi, {currentUser.username}!</p>
+          <p>{currentUser.username}</p>
           <p id='logout' onClick={handleLogout}>LOGOUT</p>
         </div>}
 
