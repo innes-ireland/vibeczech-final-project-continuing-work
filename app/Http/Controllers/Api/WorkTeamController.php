@@ -20,13 +20,19 @@ class WorkTeamController extends Controller
             // creating a new workteam
             $workTeam = new WorkTeam;
 
+        
+
         } else {
             // updating an existing workteam
             $workTeam = WorkTeam::findOrFail($data['id']);
         }
        
-
-$workTeam->save();
+ 
+        
+       
+         $workteam->job = $request->get('job');
+        $workteam->work_date = $request->get('work_date');
+        $workTeam->save();
         // fill the object with data from request
         
         foreach ($data as $value) {
@@ -36,6 +42,9 @@ $workTeam->save();
             
             
         }
+
+        
+     
         
 
         // respond with data that the frontend might find useful

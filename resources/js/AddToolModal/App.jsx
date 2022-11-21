@@ -27,6 +27,7 @@ export default function App() {
     }
 
     const hideModal = (e) => {
+        e.preventDefault()
         const modal = document.getElementById("modal_add_tool");
         const button = document.getElementById("button_add_tool");
         // modal.style.display = "none";
@@ -105,7 +106,7 @@ export default function App() {
                     <div id='modal_add_tool' className='modal' onClick={hideModal}>
                         <div className='modal__content'>
                             <h1 >Add Tools</h1>
-                            <form action="/api/tools/add" method="post" onSubmit={handleSubmit} >
+                            <form action="/api/tools/add" method="post" >
 
                                 Name:<br />
                                 <input type="text" name="name"
@@ -134,7 +135,10 @@ export default function App() {
                                     onChange={handleChange}
                                 />
                                 <br />
-                                <button id='button_add_tool' onClick={hideModal}>Add tool</button>
+                                <button id='button_add_tool' onClick={(e) => {
+                                    handleSubmit(e)
+                                    hideModal(e)
+                                }}>Add tool</button>
 
                             </form>
                         </div>

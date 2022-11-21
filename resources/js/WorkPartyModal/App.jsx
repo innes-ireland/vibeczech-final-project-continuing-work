@@ -115,6 +115,8 @@ export default function App() {
                         <div className='modal__content'>
                             <h1 >Work Party</h1>
                             <div>
+                                <div>Job: <input type="text" name="job" /></div>
+                                <div>Date: <input type="date" name="work_date"></input></div>
                                 <ul>
                                     {party.map(user => {
                                         return <li key={user.id}>
@@ -123,7 +125,7 @@ export default function App() {
                                         </li>
                                     })}
                                 </ul>
-                                <div>Job: <input type="text" /></div>
+
                                 {/* below is POST request to send data to database */}
                                 <form action="/api/new-work-party" method="post" >
                                     <button id='button_add_party'
