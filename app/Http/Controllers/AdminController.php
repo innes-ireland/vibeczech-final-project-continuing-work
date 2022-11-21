@@ -12,6 +12,13 @@ class AdminController extends Controller
         return view('admin.tool-adder-modal');
     }
 
+    
+    public function exposureCalculator()
+    {
+
+        return view('admin.exposure-calculator');
+    }
+
     public function index()
     {
 

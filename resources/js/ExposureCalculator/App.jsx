@@ -9,6 +9,7 @@ import SaveToPlan from './CalculatorComponents/SaveToPlan';
 import DisplayGraph from './CalculatorComponents/DisplayGraph';
 
 
+
 function App() {
 
     const [minuteCount, setMinuteCount] = useState(0);
@@ -16,24 +17,24 @@ function App() {
     const [vibrationMagnitude, setVibrationMagnitude] = useState(0);
     const [user, setUser] = useState(0);
     const [product, setProduct] = useState(0);
-    const [planObjects, setPlanObjects] = useState([]) //default state is an empty array 
+    const [planObjects, setPlanObjects] = useState([]) //default state is an empty array
     const [graphData, setGraphData] = useState({})
 
 
 
     return (
         <div className="App">
-            <Wrapper>
-                <SelectorBox>
-                    <UserSelector user={user} setUser={setUser} />
-                    <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
-                    <HourCount hourCount={hourCount} setHourCount={setHourCount} />
-                    <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
-                </SelectorBox>
-                <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
-                <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} />
-                <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
-            </Wrapper>
+            {/* <Wrapper> */}
+            {/* <SelectorBox> */}
+            <UserSelector user={user} setUser={setUser} />
+            <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
+            <HourCount hourCount={hourCount} setHourCount={setHourCount} />
+            <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
+            {/* </SelectorBox> */}
+            <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
+            <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} />
+            <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
+            {/* </Wrapper> */}
 
 
 
