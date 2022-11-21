@@ -10,8 +10,6 @@ export default function CurrentWorkTeams() {
     const getWorkTeams = async () => {
         const response = await axios('api/list-work-parties');
         setTeams(response.data);
-        console.log(response.data);
-
     }
 
     useEffect(() => {
