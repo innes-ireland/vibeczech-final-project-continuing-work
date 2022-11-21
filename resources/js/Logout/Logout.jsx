@@ -13,8 +13,6 @@ const Logout = () => {
     setCurrentUser(user)
   }, [])
 
-  console.log(currentUser);
-
   const logout = async () => {
     try {
 

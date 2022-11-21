@@ -14,8 +14,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik+Mono+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         
         <!-- Styles -->
-          {{-- <link rel="stylesheet" href="{{ asset('css/universal-index.css')}}"> --}}
-
         @vite('resources/css/universal-index.css')
         
         @yield('head')

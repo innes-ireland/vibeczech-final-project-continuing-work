@@ -8,9 +8,6 @@ export default function Login() {
 
   const [modalVisible, setModalVisible] = useState(false);
   const { user, setUser } = useContext(UserContext);
-
-  console.log(useContext(UserContext))
-
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -34,7 +31,6 @@ export default function Login() {
       try {
         const response = await axios.get('/api/user');
         const data = response.data;
-        console.log(data);
         setUser(data);
 
         data && data.is_admin
@@ -70,11 +66,6 @@ export default function Login() {
     });
   }
 
-  // const getCurrentUser = async function () {
-  //   const response = await axios('/api/user');
-  //   console.log(response);
-  // };
-
   const hideModal = (e) => {
     if (e.target == modal) {
       // Hides modal if you click outside of the modal__content box
@@ -83,14 +74,11 @@ export default function Login() {
   }
 
   const showModal = () => {
-    console.log('showing modal')
     // Shows modal
     setModalVisible(true)
   }
 
   return (
-
-    // replace most of this with generic login page shit
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         <h1>- Login -</h1>

@@ -23,7 +23,7 @@ class AdminController extends Controller
         return view('login.login');
     }
 
-    public function workPartyApi()
+    public function workTeamApi()
     {
         $workTeams = WorkTeam::with('users')->get();
         return $workTeams;        
