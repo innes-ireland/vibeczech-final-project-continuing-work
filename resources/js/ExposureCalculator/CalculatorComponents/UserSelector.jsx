@@ -40,7 +40,7 @@ export default function userSelector({ selectedTeamId }) {
             <option value='0'> </option>
             {
                 workers.map((worker) => {
-                    return <option value={worker.id}> {worker.first_name} " " {worker.last_name}</option>
+                    return <option value={worker.id}> {worker.first_name}  {worker.last_name}</option>
 
                 })}
         </select>
