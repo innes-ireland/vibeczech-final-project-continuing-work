@@ -92,10 +92,10 @@ export default function Login() {
           <button id='login' name='login'>Login</button>
 
           <span id='register' onClick={showModal}>Register</span>
-          {/* <span id='get-user' onClick={async function () {
-            const response = await axios('/api/user');
+          <span id='get-user' onClick={async function () {
+            const response = await axios('/api/worker');
             console.log(response);
-          }}>Get current user</span> */}
+          }}>Get current user</span>
         </form>
 
         {

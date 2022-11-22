@@ -10,7 +10,7 @@
 @section('content')
 <div class="worker_detail">
 
-  <h1>worker detail content goes here</h1>
+  <h1>Detail page of user {{ $user->first_name }}</h1>
 
   <div class="graph_container"><p>placeholder gc</p></div>
   
