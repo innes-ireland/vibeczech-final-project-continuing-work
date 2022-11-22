@@ -2,11 +2,11 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 
-export default function WorkTeamSelector({ workTeams, setWork }) {
+export default function WorkTeamSelector({ teams, setTeams, selectedTeamId, setSelectedTeamId }) {
 
-    const [teams, setTeams] = useState([]);
+    // const [teams, setTeams] = useState([]);
     const handleTeamChange = (e) => {
-        setWorkerNames(e.target.value)
+        setSelectedTeamId(e.target.value)
 
     }
 
@@ -27,8 +27,8 @@ export default function WorkTeamSelector({ workTeams, setWork }) {
 
     return (
 
-        <select onChange={handleTeamChange}>
-            <option value='null'> </option>
+        <select onChange={handleTeamChange} value={selectedTeamId}>
+            <option value='0'> </option>
             {
                 teams.map((team) => {
                     return <option value={team.id}> {team.job}</option>

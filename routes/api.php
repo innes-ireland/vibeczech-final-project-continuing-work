@@ -24,6 +24,6 @@ Route::post('/tools/add', [App\Http\Controllers\Api\AddToolController::class, 's
 Route::get('/tools', [App\Http\Controllers\Api\ToolSelectorController::class, 'getTool']);
 Route::get('/work-party', [App\Http\Controllers\Api\WorkPartyController::class, 'index']);
 Route::get('/workteams',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkTeams']);
-Route::get('/workteam-names',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkerNames']);
+Route::get('/workteam-names/{id}',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkerNames']);
 Route::post('/new-work-party', [App\Http\Controllers\Api\WorkTeamController::class, 'store']);
 Route::get('/list-work-teams', [App\Http\Controllers\AdminController::class, 'workTeamApi']);
