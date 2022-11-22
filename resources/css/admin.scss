@@ -1,3 +1,25 @@
+#current_workteams {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+
+    .workteam {
+        margin-bottom: 1.3%;
+        margin-right: 1.3%;
+
+        h4 {
+            color: #dc4c18;
+            margin-bottom: 0px;
+
+            small {
+                color: #ffffff;
+                font-size: 0.7em;
+            }
+        }
+
+    }
+}
+
 .graph_container {
     background-color: #232323;
     margin-right: 10%;
@@ -34,6 +56,35 @@ h1 {
     width: 80%;
 }
 
+#worker_dropdown {
+
+    #worker-dropdown-form {
+        text-align: center;
+
+        button {
+            font-size: 1.1em;
+            height: 2em;
+            margin-top: 1em;
+        }
+
+        label {
+            font-size: 1.3em;
+        }
+
+        select {
+            font-size: 1.1em;
+            height: 1.5em;
+        }
+    }
+
+    .worker-title {
+        color: #dc4c18;
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+
 @media only screen and (max-width: 600px) {
     .graph_container {
         background-color: #232323;
@@ -51,9 +102,9 @@ h1 {
         margin-left: 23%;
     }
 
-    .logout-button {
-        margin-right: 1em;
-        font-size: 0.8em;
+    #logout-holder {
+        margin-right: 0.8em;
+        font-size: 0.6em;
     }
 
     #modalTrigger {
@@ -87,6 +138,11 @@ h1 {
             width: 29%;
             margin-left: 36%;
         }
+    }
+
+    #current_workteams .workteam {
+        width: 70%;
+        margin-left: 15%;
     }
 }
 
@@ -139,6 +195,11 @@ h1 {
             margin-left: 41%;
         }
     }
+
+    #current_workteams .workteam {
+        width: 45%;
+        margin-left: 1.2%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -164,6 +225,11 @@ h1 {
             margin-left: 42.5%;
         }
     }
+
+    #current_workteams .workteam {
+        width: 30%;
+        margin-left: 1.3%;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -188,6 +254,11 @@ h1 {
             margin-left: 41%;
         }
     }
+
+    #current_workteams .workteam {
+        width: 30%;
+        margin-left: 1.3%;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -211,5 +282,10 @@ h1 {
             width: 10%;
             margin-left: 43%;
         }
+    }
+
+    #current_workteams .workteam {
+        width: 30%;
+        margin-left: 1.3%;
     }
 }

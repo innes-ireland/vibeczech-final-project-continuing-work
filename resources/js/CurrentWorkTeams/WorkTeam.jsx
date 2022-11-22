@@ -6,19 +6,19 @@ export default function WorkTeam({ team }) {
     const currentDate = new Date();
 
     return (
-        <div>
+        <>
             {
                 currentDate.getTime() >= workDate.getTime()
                     ? <></>
-                    : <> <h4>{team.job}</h4>
-                        <small>{workDate.toDateString()}</small>
-                        <br />
+                    : <div className='workteam'> <h4>{team.job}  | <small>{workDate.toDateString()}</small></h4>
+                        {/* <small>{workDate.toDateString()}</small> */}
+                        {/* <br /> */}
                         {team.users.map(worker => {
                             return <Worker worker={worker} />
                         })}
                         <hr />
-                    </>
+                    </div>
             }
-        </div >
+        </ >
     )
 }

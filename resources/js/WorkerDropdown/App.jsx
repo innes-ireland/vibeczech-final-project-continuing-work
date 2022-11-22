@@ -36,9 +36,9 @@ export default function App() {
   return (
     <>
       {/* worker dropdown menu that allows admin to go look at each worker's detail page */}
-      <h4>- View Worker Exposure Records -</h4>
+      <h2 className='worker-title'>- View Worker Exposure Records -</h2>
       <form id='worker-dropdown-form' method="get" onSubmit={goToWorkerDetail}>
-        <label htmlFor='selectWorker'>Select Worker:</label>
+        <label htmlFor='selectWorker'>Select Worker: </label>
         <select id="selectWorker" name="selectWorker" onChange={handleChange}>
           {
             // populates the dropdown
@@ -47,8 +47,8 @@ export default function App() {
             })
           }
         </select>
-
-        <button id='goToWorkerDetail' name='goToWorkerDetail'>View Exposure Records</button>
+        <br />
+        <button id='goToWorkerDetail' name='goToWorkerDetail'>View Records</button>
       </form>
     </>
   )

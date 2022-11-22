@@ -17,7 +17,7 @@ export default function CurrentWorkTeams() {
     }, [])
 
     return (
-        <div>
+        <>
             {
                 !teams
                     ? <></>
@@ -28,6 +28,6 @@ export default function CurrentWorkTeams() {
                         />
                     })
             }
-        </div>
+        </>
     )
 }
