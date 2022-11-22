@@ -8,6 +8,7 @@ export default defineConfig({
       input: [
         'resources/css/app.css',
         'resources/css/login.scss',
+        'resources/css/register.scss',
         'resources/css/worker-detail.scss',
         'resources/css/modal.css',
         'resources/css/universal-index.css',
@@ -18,7 +19,7 @@ export default defineConfig({
         'resources/js/work-party-modal.jsx',
         'resources/js/Logout.jsx',
         'resources/js/Worker.jsx',
-
+        'resources/js/ExposureCalculator.jsx'
       ],
       refresh: true,
     }),

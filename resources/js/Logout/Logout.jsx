@@ -13,8 +13,6 @@ const Logout = () => {
     setCurrentUser(user)
   }, [])
 
-  console.log(currentUser);
-
   const logout = async () => {
     try {
 
@@ -42,8 +40,8 @@ const Logout = () => {
         <></>
         :
         <div>
-          <p>Hi, {currentUser.username}!</p>
-          <p onClick={handleLogout}>LOGOUT</p>
+          <p>{currentUser.username}</p>
+          <p id='logout' onClick={handleLogout}>LOGOUT</p>
         </div>}
 
     </UserContext.Provider>

@@ -8,9 +8,6 @@ export default function Login() {
 
   const [modalVisible, setModalVisible] = useState(false);
   const { user, setUser } = useContext(UserContext);
-
-  console.log(useContext(UserContext))
-
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -34,7 +31,6 @@ export default function Login() {
       try {
         const response = await axios.get('/api/user');
         const data = response.data;
-        console.log(data);
         setUser(data);
 
         data && data.is_admin
@@ -70,11 +66,6 @@ export default function Login() {
     });
   }
 
-  // const getCurrentUser = async function () {
-  //   const response = await axios('/api/user');
-  //   console.log(response);
-  // };
-
   const hideModal = (e) => {
     if (e.target == modal) {
       // Hides modal if you click outside of the modal__content box
@@ -83,36 +74,28 @@ export default function Login() {
   }
 
   const showModal = () => {
-    console.log('showing modal')
     // Shows modal
     setModalVisible(true)
   }
 
   return (
-
-    // replace most of this with generic login page shit
     <UserContext.Provider value={{ user, setUser }}>
       <div>
         <h1>- Login -</h1>
-        <form action="/login" method="post" onSubmit={handleSubmit}>
+        <form id='login-form' action="/login" method="post" onSubmit={handleSubmit}>
           <label htmlFor='email'>Email</label>
-          <br /> {/* All breaks should eventually be replaced with styling */}
           <input type='text' id='email' name='email' value={values.email} onChange={handleChange} />
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <label htmlFor='password'>Password</label>
-          <br /> {/* All breaks should eventually be replaced with styling */}
           <input type='password' id='password' name='password' value={values.password} onChange={handleChange} />
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <button id='login' name='login'>Login</button>
-          <br /><br /> {/* All breaks should eventually be replaced with styling */}
 
           <span id='register' onClick={showModal}>Register</span>
-          <span id='get-user' onClick={async function () {
+          {/* <span id='get-user' onClick={async function () {
             const response = await axios('/api/user');
             console.log(response);
-          }}>Get current user</span>
+          }}>Get current user</span> */}
         </form>
 
         {

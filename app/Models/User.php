@@ -45,9 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function workTeam()
+    public function workTeams()
     {
-        return $this->hasMany(WorkTeam::class);
+        return $this->belongsToMany(WorkTeam::class);
     }
 
     public function selfAssessment()
@@ -60,6 +60,10 @@ class User extends Authenticatable
         return $this->belongsToOne(PlannedExposure::class);
     }
 
+    public function exposureInstance()
+    {
+        return $this->hasMany(ExposureInstance::class);
+    }
 
 
 }
