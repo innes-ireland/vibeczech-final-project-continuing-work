@@ -41,6 +41,14 @@
     </div>
   </div>
 
+  <div class="worker_dropdown_container">
+    <div id='worker_dropdown'>
+      <h5>worker dropdown-I'm in resources/views/admin/index.blade.php</h5>
+    @viteReactRefresh
+    @vite('resources/js/workerDropdown.jsx')
+    </div>
+  </div>
+
 </div>
 
 @endsection
