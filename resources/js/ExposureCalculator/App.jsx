@@ -7,7 +7,7 @@ import { useState } from 'react';
 import SelectorBox from './CalculatorComponents/SelectorBox';
 import SaveToPlan from './CalculatorComponents/SaveToPlan';
 import DisplayGraph from './CalculatorComponents/DisplayGraph';
-import WorkTeamSelector from './CalculatorComponents/WorkPartySelector';
+import WorkTeamSelector from './CalculatorComponents/WorkTeamSelector';
 
 
 
@@ -20,7 +20,7 @@ function App() {
     const [product, setProduct] = useState(0);
     const [planObjects, setPlanObjects] = useState([]) //default state is an empty array
     const [graphData, setGraphData] = useState({})
-    const [workTeams, setWorkTeams] = useState([])
+    const [workerNames, setWorkerNames] = useState([])
 
 
 
@@ -28,8 +28,8 @@ function App() {
         <div className="App">
             {/* <Wrapper> */}
             {/* <SelectorBox> */}
-            <WorkTeamSelector workTeams={workTeams} setWorkTeams={setWorkTeams} />
-            <UserSelector user={user} setUser={setUser} workTeams={workTeams} />
+            <WorkTeamSelector workerNames={workerNames} setWorkerNames={setWorkerNames} />
+            {/* <UserSelector user={user} setUser={setUser} workTeams={workTeams} /> */}
             <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
             <HourCount hourCount={hourCount} setHourCount={setHourCount} />
             <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />

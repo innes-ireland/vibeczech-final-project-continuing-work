@@ -1,15 +1,22 @@
-export default function userSelector({ user, setUser, workParty }) {
+import axios from 'axios'
+export default function userSelector({ users, setUsers, workParty }) {
 
     const handleUserChange = (e) => {
-        setUser(e.target.value)
+        setUsers(e.target.value)
 
+    }
+
+    const getUserNames = async () => {
+        const response = await axios.get('/api/workteams')
+        setUsers(response.data)
     }
 
 
 
 
 
-    // this is hardcoded to represent an array of objects retrieved from database
+
+
 
 
 
@@ -19,7 +26,7 @@ export default function userSelector({ user, setUser, workParty }) {
         <select onChange={handleUserChange}>
             <option value='null'> </option>
             {
-                workParty.map((user) => {
+                workTeam.map((user) => {
                     return <option value={user.name}> {user.name}</option>
 
                 })}

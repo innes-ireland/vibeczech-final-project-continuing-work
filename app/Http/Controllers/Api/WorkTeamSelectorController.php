@@ -8,8 +8,8 @@ use App\Models\User;
 
 class WorkTeamSelectorController extends Controller
 {
-    public function getWorkTeam() {
-        $workteams = Workteams::get();
+    public function getWorkTeams() {
+        $workteams = WorkTeam::get();
 
         return $workteams;
     }

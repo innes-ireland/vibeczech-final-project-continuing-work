@@ -21,8 +21,8 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
         // console.log(new_array)
 
     };
-    function handleRemoveWorker(id) {
-        console.log(id)
+    function removeWorker(id) {
+        const remainingWorkers = planObjects.filter((object) => id)
 
     }
 
