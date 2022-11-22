@@ -27,7 +27,7 @@ class ExposureInstance extends Model
 
     public function tool()
     {
-        return $this->hasMany(Tool::class);
+        return $this->belongsTo(Tool::class);
     }
 
      public function user()

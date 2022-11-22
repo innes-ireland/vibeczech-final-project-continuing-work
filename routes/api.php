@@ -30,3 +30,6 @@ Route::get('/list-work-teams', [App\Http\Controllers\AdminController::class, 'wo
 
 //gets specific worker's info in an API
 Route::get('/worker/{id?}', [App\Http\Controllers\Api\WorkerController::class, 'detail']);
+
+// gets specific exposure instance
+Route::get('/exposure/{id}', [App\Http\Controllers\Api\ExposureInstanceController::class, 'index']);
