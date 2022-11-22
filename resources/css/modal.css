@@ -7,6 +7,13 @@
     top: 0;
     width: 100%;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s linear;
+
+}
+
+.modal-opaque {
+    opacity: 0.3;
 }
 
 .modal__content {
@@ -17,4 +24,3 @@
     padding: 20px;
     width: 80%;
 }
-

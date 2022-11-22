@@ -6,7 +6,8 @@ import getCurrentUser from '../getCurrentUser';
 
 export default function Login() {
 
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(null);
+  const [modalOpaque, setModalOpaque] = useState(true)
   const { user, setUser } = useContext(UserContext);
   const [values, setValues] = useState({
     email: '',
@@ -78,6 +79,10 @@ export default function Login() {
     setModalVisible(true)
   }
 
+  useEffect(() => {
+    (modalVisible != null) && setModalOpaque(!modalOpaque)
+  }, [modalVisible])
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
@@ -100,7 +105,7 @@ export default function Login() {
 
         {
           modalVisible ?
-            <div id='modal' className='modal' onClick={hideModal}>
+            <div id='modal' className={'modal' + (modalOpaque ? ' modal-opaque' : '')} onClick={hideModal}>
               <div className='modal__content registration-modal'>
                 <Register
                   setModalVisible={setModalVisible} />
