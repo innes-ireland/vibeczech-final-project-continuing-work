@@ -10,53 +10,11 @@ export default function App() {
     const api = '/api/work-party';
     const response = await axios(api);
     setWorkers(response.data);
-    console.log('Workers:')
-    console.log(response.data);
   }
 
   useEffect(() => {
     getWorkers();
   }, [])
-
-  //   const handleSubmit = async (event) => {
-
-  //   event.preventDefault();
-
-  //   // with axios
-  //   try {
-  //     // make the AJAX request
-  //     const response = await axios.post('/login', values);
-  //     // get the (already JSON-parsed) response data
-  //     const response_data = response.data;
-
-  //     try {
-  //       const response = await axios.get('/api/user');
-  //       const data = response.data;
-  //       setUser(data);
-
-  //       data && data.is_admin
-  //         ?
-  //         window.location.replace('/admin')
-  //         :
-  //         window.location.replace('/worker')
-  //     }
-  //     catch (err) {
-  //       console.log(err);
-  //     }
-
-  //   } catch (error) {
-  //     // if the response code is not 2xx (success)
-  //     switch (error.response.status) {
-  //       case 422:
-  //         // handle validation errors here
-  //         console.log('VALIDATION FAILED:', error.response.data.errors);
-  //         break;
-  //       case 500:
-  //         console.log('UNKNOWN ERROR', error.response.data);
-  //         break;
-  //     }
-  //   }
-  // }
 
   const handleChange = (event) => {
 
