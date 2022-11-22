@@ -8,9 +8,17 @@ use App\Models\User;
 
 class WorkTeamSelectorController extends Controller
 {
-    public function getWorkTeam() {
-        $workteams = Workteams::get();
+    public function getWorkTeams() {
+        $workteams = WorkTeam::get();
 
         return $workteams;
+    }
+
+    public function getWorkerNames($id){
+        $workTeam = WorkTeam::find($id);
+        $workTeamNames = $workTeam->users;
+
+        return $workTeamNames;
+
     }
 }

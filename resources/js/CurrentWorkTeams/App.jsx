@@ -23,6 +23,7 @@ export default function CurrentWorkTeams() {
                     ? <></>
                     : teams.map(team => {
                         return <WorkTeam
+                            key={team.id}
                             team={team}
                         />
                     })

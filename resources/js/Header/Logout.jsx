@@ -1,17 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from 'react';
-import UserContext from '../Contexts/UserContext';
-import getCurrentUser from "../getCurrentUser";
 
-const Logout = () => {
-
-  const { user, setUser } = useContext(UserContext);
-  const [currentUser, setCurrentUser] = useState(null);
-
-  useEffect(async () => {
-    const user = await getCurrentUser();
-    setCurrentUser(user)
-  }, [])
+const Logout = ({ user, setUser }) => {
 
   const logout = async () => {
     try {
@@ -34,17 +24,17 @@ const Logout = () => {
   }
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {!currentUser
+    <>
+      {!user
         ?
         <></>
         :
         <div>
-          <p>{currentUser.username}</p>
+          <p>{user.username}</p>
           <p id='logout' onClick={handleLogout}>LOGOUT</p>
-        </div>}
-
-    </UserContext.Provider>
+        </div>
+      }
+    </>
   )
 
 }
