@@ -20,7 +20,8 @@ export default defineConfig({
         'resources/js/Logout.jsx',
         'resources/js/Worker.jsx',
         'resources/js/ExposureCalculator.jsx',
-        'resources/js/workerDropdown.jsx'
+        'resources/js/workerDropdown.jsx',
+        'resources/css/tool-modal.scss',
       ],
       refresh: true,
     }),

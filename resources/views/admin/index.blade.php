@@ -5,6 +5,7 @@
   <title>VibeCzech | Admin</title>
   @vite('resources/css/admin.scss')
   @vite('resources/css/modal.css')
+  @vite('resources/css/tool-modal.scss')
 @endsection
 
 
