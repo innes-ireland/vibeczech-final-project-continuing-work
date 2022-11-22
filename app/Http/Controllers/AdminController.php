@@ -25,6 +25,7 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    // redirects to login page upon logout
     public function logout ()
     {
         return view('login.login');
