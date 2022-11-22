@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// basically just a function for getting the current user, useful for several different apps
+
 const getCurrentUser = async () => {
   console.log("getting user");
   try {
