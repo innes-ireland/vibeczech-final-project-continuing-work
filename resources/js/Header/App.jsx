@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import UserContext from '../Contexts/UserContext';
 import Logout from './Logout';
 import logo from '../../../public/logo.png';
 import getCurrentUser from '../getCurrentUser';
@@ -8,15 +7,16 @@ const App = () => {
 
   const [user, setUser] = useState(null);
 
+  // uses getCurrentUser js file to retrieve user data, sets state
   useEffect(async () => {
-    const something = await getCurrentUser();
-    setUser(something);
+    const currentUser = await getCurrentUser();
+    setUser(currentUser);
   }, [])
 
   return (
     <>
-      {console.log(user)}
       {
+        // checks if there is a user: null takes you to login, otherwise to user landing page
         user == null
           ? <div className="logo">
             <a href="http://www.vibeczech.test/">
@@ -36,12 +36,10 @@ const App = () => {
             </div>
 
       }
-
-      {/* <UserContext.Provider value={{ user, setUser }}> */}
       <>
+        {/* passes current user info to logout component */}
         <Logout user={user} setUser={setUser} />
       </>
-      {/* </UserContext.Provider> */}
     </>
   )
 
