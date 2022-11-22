@@ -1,3 +1,39 @@
+.graph_container {
+    background-color: #232323;
+    margin-right: 10%;
+    padding: 1em;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#modalTrigger {
+    background-color: #dc4c18;
+    border: 1px solid #dc4c18;
+    border-radius: 4px;
+    color: #000000;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#modalTrigger:hover {
+    background-color: #ffffff;
+    border: #ffffff;
+}
+
+.work_parties_container {
+    background-color: #232323;
+    margin-bottom: 3em;
+    margin-right: 10%;
+    padding: 1em;
+    width: 80%;
+}
+
 @media only screen and (max-width: 600px) {
     .graph_container {
         background-color: #232323;
@@ -107,15 +143,7 @@
 
 @media only screen and (min-width: 768px) {
     .graph_container {
-        background-color: #232323;
         margin-left: 9%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -123,31 +151,13 @@
     }
 
     #modalTrigger {
-        background-color: #dc4c18;
-        border: 1px solid #dc4c18;
-        border-radius: 4px;
-        color: #000000;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        text-align: center;
         margin-left: 46%;
-        margin-bottom: 2em;
         width: 10%;
     }
 
-    #modalTrigger:hover {
-        background-color: #ffffff;
-        border: #ffffff;
-    }
-
     .work_parties_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 9%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
+
 
         #modalTrigger {
             width: 15%;
@@ -158,15 +168,7 @@
 
 @media only screen and (min-width: 992px) {
     .graph_container {
-        background-color: #232323;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -174,31 +176,12 @@
     }
 
     #modalTrigger {
-        background-color: #dc4c18;
-        border: 1px solid #dc4c18;
-        border-radius: 4px;
-        color: #000000;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        text-align: center;
         margin-left: 46%;
-        margin-bottom: 2em;
         width: 7%;
     }
 
-    #modalTrigger:hover {
-        background-color: #ffffff;
-        border: #ffffff;
-    }
-
     .work_parties_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
 
         #modalTrigger {
             width: 12%;
@@ -209,15 +192,7 @@
 
 @media only screen and (min-width: 1200px) {
     .graph_container {
-        background-color: #232323;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -225,31 +200,12 @@
     }
 
     #modalTrigger {
-        background-color: #dc4c18;
-        border: 1px solid #dc4c18;
-        border-radius: 4px;
-        color: #000000;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        text-align: center;
         margin-left: 46%;
-        margin-bottom: 2em;
         width: 7%;
     }
 
-    #modalTrigger:hover {
-        background-color: #ffffff;
-        border: #ffffff;
-    }
-
     .work_parties_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
 
         #modalTrigger {
             width: 10%;
