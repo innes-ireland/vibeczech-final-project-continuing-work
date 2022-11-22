@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Register(props) {
 
+  // allows user inputs to be stored
   const [values, setValues] = useState({
     first_name: '',
     last_name: '',
@@ -13,6 +14,8 @@ export default function Register(props) {
     password_confirmation: ''
   })
 
+  // allows the user to register and redirects to worker landing page
+  // no one can be admin upon registering, so it never redirects to /admin
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -25,6 +28,7 @@ export default function Register(props) {
       // get the (already JSON-parsed) response data
       const response_data = response.data;
       props.setModalVisible(false);
+      // redirects user to /worker after registration
       window.location.replace('/worker');
     } catch (error) {
       console.log(error);
@@ -41,6 +45,7 @@ export default function Register(props) {
     }
   }
 
+  // saves what the user inputs for registration
   const handleChange = (event) => {
     setValues(previous_values => {
       return ({
@@ -51,6 +56,7 @@ export default function Register(props) {
   }
 
   return (
+    // registration form
     <form id='register-form' action="/register" method="post" onSubmit={handleSubmit}>
       <div className='register__container'>
 

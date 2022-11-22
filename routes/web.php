@@ -28,5 +28,8 @@ Route::get('/', [LoginController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index'])->middleware('can:admin');
 Route::get('/exposure-calculator', [AdminController::class, 'exposureCalculator'])->middleware('can:admin');
 
+//gets specific worker's detail page (used from Admin page)
 Route::get('/worker/{id?}', [WorkerController::class, 'detail'])->name('worker.detail');
+
+// logs out
 Route::get('/logout', [WorkerController::class, 'logout']);

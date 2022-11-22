@@ -5,18 +5,23 @@ import UserContext from '../Contexts/UserContext';
 import getCurrentUser from '../getCurrentUser';
 
 export default function Login() {
-
+  // allows registration modal to be hidden until clicked
   const [modalVisible, setModalVisible] = useState(false);
+  // not being used right now
   const { user, setUser } = useContext(UserContext);
+  // a place for user-supplied form values
   const [values, setValues] = useState({
     email: '',
     password: ''
   })
 
+  // gets current user when page loads
   useEffect(() => {
     getCurrentUser();
   }, [])
 
+
+  // allows the user to login and redirects to their landing page
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -33,6 +38,8 @@ export default function Login() {
         const data = response.data;
         setUser(data);
 
+        // redirects user based on whether they are admin or
+        // just a worker
         data && data.is_admin
           ?
           window.location.replace('/admin')
@@ -57,6 +64,7 @@ export default function Login() {
     }
   }
 
+  // saves what the user inputs for login
   const handleChange = (event) => {
     setValues(previous_values => {
       return ({
@@ -81,6 +89,7 @@ export default function Login() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
+        {/* login form */}
         <h1>- Login -</h1>
         <form id='login-form' action="/login" method="post" onSubmit={handleSubmit}>
           <label htmlFor='email'>Email</label>
@@ -98,6 +107,7 @@ export default function Login() {
           }}>Get current user</span>
         </form>
 
+        {/* code for registraton modal, only shows if register has been clicked */}
         {
           modalVisible ?
             <div id='modal' className='modal' onClick={hideModal}>
