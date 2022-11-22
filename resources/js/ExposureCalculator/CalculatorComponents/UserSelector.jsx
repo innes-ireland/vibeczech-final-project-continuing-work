@@ -1,49 +1,49 @@
-export default function userSelector({ user, setUser, workParty }) {
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
-  const handleUserChange = (e) => {
-    setUser(e.target.value)
+export default function userSelector({ selectedTeamId }) {
+    const [workers, setWorkers] = useState([])
+    const [selectedWorkerId, setSelectedWorkerId] = useState(0)
+    // const [workteamId, setWorkTeamId] = useState(null)
 
-  }
+    const handleUserChange = (e) => {
+        setSelectedWorkerId(e.target.value)
+    }
 
+    const getWorkers = async () => {
+        const response = await axios.get('/api/workteam-names/' + selectedTeamId)
+        console.log(response)
+        setWorkers(response.data)
+    }
 
-
-  const users = [{
-    id: 1,
-    name: 'Innes',
-
-  },
-  {
-    id: 2,
-    name: 'Aidan',
-
-  },
-  {
-    id: 3,
-    name: 'Briana',
-
-  },
-  {
-    id: 4,
-    name: 'Sabina',
-  }
-
-
-
-  ] // this is hardcoded to represent an array of objects retrieved from database
+    useEffect(() => {
+        if (selectedTeamId) {
+            getWorkers()
+        }
+    }, [selectedTeamId])
 
 
 
 
 
-  return (
-    <select onChange={handleUserChange}>
-      <option value='null'> </option>
-      {
-        workParty.map((user) => {
-          return <option value={user.name}> {user.name}</option>
 
-        })}
-    </select>
 
-  );
+
+
+
+
+    return (
+        // console.log(getUserNames())
+
+
+        <select onChange={(e) => { handleUserChange(e) }} value={selectedWorkerId}>
+            <option value='0'> </option>
+            {
+                workers.map((worker) => {
+                    return <option value={worker.id}> {worker.first_name}  {worker.last_name}</option>
+
+                })}
+        </select>
+
+    );
 }

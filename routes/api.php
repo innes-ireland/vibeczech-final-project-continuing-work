@@ -23,6 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/tools/add', [App\Http\Controllers\Api\AddToolController::class, 'store']);
 Route::get('/tools', [App\Http\Controllers\Api\ToolSelectorController::class, 'getTool']);
 Route::get('/work-party', [App\Http\Controllers\Api\WorkPartyController::class, 'index']);
+Route::get('/workteams',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkTeams']);
+Route::get('/workteam-names/{id}',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkerNames']);
 Route::post('/new-work-party', [App\Http\Controllers\Api\WorkTeamController::class, 'store']);
 Route::get('/list-work-teams', [App\Http\Controllers\AdminController::class, 'workTeamApi']);
 Route::get('/worker/{id?}', [App\Http\Controllers\Api\WorkerController::class, 'detail']);
