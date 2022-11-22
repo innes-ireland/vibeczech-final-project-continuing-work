@@ -13,4 +13,12 @@ class WorkTeamSelectorController extends Controller
 
         return $workteams;
     }
+
+    public function getWorkerNames($id){
+        $workTeam = WorkTeam::find($id);
+        $workTeamNames = $workTeam->users;
+
+        return $workTeamNames;
+
+    }
 }
