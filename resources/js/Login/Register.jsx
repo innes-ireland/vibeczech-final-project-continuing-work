@@ -18,8 +18,6 @@ export default function Register(props) {
     event.preventDefault();
 
     console.log("submitting");
-    // console.log(axios)
-
     // with axios
     try {
       // make the AJAX request
