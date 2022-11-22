@@ -25,4 +25,4 @@ Route::get('/tools', [App\Http\Controllers\Api\ToolSelectorController::class, 'g
 Route::get('/work-party', [App\Http\Controllers\Api\WorkPartyController::class, 'index']);
 Route::get('/workteams',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkTeams']);
 Route::post('/new-work-party', [App\Http\Controllers\Api\WorkTeamController::class, 'store']);
-Route::get('/list-work-parties', [App\Http\Controllers\AdminController::class, 'workPartyApi']);
+Route::get('/list-work-teams', [App\Http\Controllers\AdminController::class, 'workTeamApi']);

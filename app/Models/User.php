@@ -60,6 +60,10 @@ class User extends Authenticatable
         return $this->belongsToOne(PlannedExposure::class);
     }
 
+    public function exposureInstance()
+    {
+        return $this->hasMany(ExposureInstance::class);
+    }
 
 
 }

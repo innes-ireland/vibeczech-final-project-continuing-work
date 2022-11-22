@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class PlannedExposure extends Model
 {
     use HasFactory;
+     protected $table = 'planned_exposure';
+
+     protected $fillable = [
+                'created_by',
+                'worker_exposed',
+                'exposure_start',
+                'exposure_end',
+                'tool_id'
+    ];
 
     public function exposureInstance()
     {

@@ -8,7 +8,7 @@ export default function CurrentWorkTeams() {
     const [teams, setTeams] = useState([]);
 
     const getWorkTeams = async () => {
-        const response = await axios('api/list-work-parties');
+        const response = await axios('api/list-work-teams');
         setTeams(response.data);
     }
 
