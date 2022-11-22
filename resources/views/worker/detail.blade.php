@@ -12,11 +12,11 @@
 
   <h1>worker detail content goes here</h1>
 
-  <div class="graph_container"><p>placeholder gc</p></div>
+  <div class="graph_container"><p>Graph placeholder..do we want this?</p></div>
   
-  <div class="exposure_record"><p>placeholder er</p></div>
+  {{-- <div class="exposure_record"><p>placeholder er</p></div> --}}
 
-  <div id="admin_button"></div>
+  <div class="exposure_record" id="admin_button"></div>
     @viteReactRefresh
     @vite('resources/js/Worker.jsx')
     
