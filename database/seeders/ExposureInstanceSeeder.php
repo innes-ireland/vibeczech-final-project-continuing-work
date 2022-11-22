@@ -123,6 +123,42 @@ class ExposureInstanceSeeder extends Seeder
                 'tool_id'=> 2
 
             ],
+             [
+                'plan_id' => 6,
+                'user_id' => 17,
+                'exposure_value'=> 300,
+                'exposure_start'=> '2022-11-25 09:25:11',
+                'exposure_finish'=> '2022-11-25 14:00:11',
+                'duration_minutes'=> 5,
+                'tool_id'=> 3
+            ],
+             [
+                'plan_id' => 1,
+                'user_id' => 17,
+                'exposure_value'=> 245,
+                'exposure_start'=> '2022-11-26 10:25:11',
+                'exposure_finish'=> '2022-11-26 14:25:11',
+                'duration_minutes'=> 2,
+                'tool_id'=> 2
+            ],
+             [
+                'plan_id' => 4,
+                'user_id' => 17,
+                'exposure_value'=> 345,
+                'exposure_start'=> '2022-11-26 09:25:11',
+                'exposure_finish'=> '2022-11-26 16:25:11',
+                'duration_minutes'=> 6,
+                'tool_id'=> 4
+            ],
+             [
+                'plan_id' => 1,
+                'user_id' => 17,
+                'exposure_value'=> 105,
+                'exposure_start'=> '2022-11-27 11:25:11',
+                'exposure_finish'=> '2022-11-27 18:25:11',
+                'duration_minutes'=> 1,
+                'tool_id'=> 5
+            ],
         ];
 
         foreach ($exposure as $exp) {
