@@ -1,4 +1,6 @@
 import { useState } from "react";
+import HourCount from "./HourCount";
+import MinuteCount from "./MinuteCount";
 export default function SaveToPlan({ product, user, planObjects, setPlanObjects }) {
     const saveToPlan = (event) => {
 
@@ -25,6 +27,30 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
         const remainingWorkers = planObjects.filter((object) => id)
 
     }
+    function sendToDatabase() {
+        // let exposureInstanceData = {
+        //     id: exposureInstanceData.length,
+        //     user_id: user.id, 
+        //     exposure_value: product,
+        //     exposure_start: " ",
+        //     exposure_finish: " ",
+        //     duration_minutes: hourCount + (minuteCount/60) 
+        // } // exposure instance data set according to the model
+        return (
+            <form>
+                <input type="hidden" name="user_id" value={worker.id}></input>
+                <input type="hidden" name="exposure_value" value={product}></input>
+                <input type="hidden" name="duration_minutes" value={hourCount + (minuteCount / 60)}></input>
+                <input type="dateTime" name="exposure_start" value="dateTime"></input>
+                <input type="dateTime" name="exposure_finish" value="dateTime"></input>
+                <button type="submit"> submit record </button>
+
+            </form>
+        )
+
+
+
+    }
 
 
     return (
@@ -35,7 +61,7 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
                 {planObjects.map(planObject => {
 
                     return <li>
-                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel} <button type="button"> X</button>
+                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel} <button type="button"> X</button><button onClick={sendToDatabase()}>send to DB</button>
                     </li>
 
 

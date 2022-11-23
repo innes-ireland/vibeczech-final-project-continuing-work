@@ -6,7 +6,7 @@ export default function HourCount({ hourCount, setHourCount }) {
 
 
     function changeHour(amount) {
-        if (hourCount >= 0 && hourCount <= 8)
+        if (hourCount + 1 > 0 && hourCount <= 8)
             setHourCount(hourCount => hourCount + amount)
 
     }
