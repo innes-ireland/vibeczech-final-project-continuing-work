@@ -1,55 +1,51 @@
+.exposure_record {
+    background-color: #232323;
+    margin-right: 10%;
+    padding: 1em;
+    width: 80%;
+}
+
+.graph_container {
+    background-color: #232323;
+    margin-bottom: 3em;
+    margin-right: 10%;
+    padding: 1em;
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
     .exposure_record {
-        background-color: #232323;
         margin-left: 7%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
     }
 
     .graph_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 7%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
         margin-left: 23%;
     }
 
-    .logout-button {
+    #logout-holder {
         margin-right: 1em;
-        font-size: 0.8em;
+
+        p {
+            font-size: 0.6em;
+        }
     }
 }
 
 @media only screen and (min-width: 600px) {
     .exposure_record {
-        background-color: #232323;
         margin-left: 8%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
     }
 
     .graph_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 8%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -59,24 +55,11 @@
 
 @media only screen and (min-width: 768px) {
     .exposure_record {
-        background-color: #232323;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
     }
 
     .graph_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -86,24 +69,11 @@
 
 @media only screen and (min-width: 992px) {
     .exposure_record {
-        background-color: #232323;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
     }
 
     .graph_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {
@@ -113,24 +83,11 @@
 
 @media only screen and (min-width: 1200px) {
     .exposure_record {
-        background-color: #232323;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
     }
 
     .graph_container {
-        background-color: #232323;
-        margin-bottom: 3em;
         margin-left: 10%;
-        margin-right: 10%;
-        padding: 1em;
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
     }
 
     .logo {

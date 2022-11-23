@@ -27,5 +27,9 @@ Route::get('/workteams',[App\Http\Controllers\Api\WorkTeamSelectorController::cl
 Route::get('/workteam-names/{id}',[App\Http\Controllers\Api\WorkTeamSelectorController::class, 'getWorkerNames']);
 Route::post('/new-work-party', [App\Http\Controllers\Api\WorkTeamController::class, 'store']);
 Route::get('/list-work-teams', [App\Http\Controllers\AdminController::class, 'workTeamApi']);
-Route::get('/exposure/{id}', [App\Http\Controllers\Api\ExposureInstanceController::class, 'index']);
+
+//gets specific worker's info in an API
 Route::get('/worker/{id?}', [App\Http\Controllers\Api\WorkerController::class, 'detail']);
+
+// gets specific exposure instance
+Route::get('/exposure/{id}', [App\Http\Controllers\Api\ExposureInstanceController::class, 'index']);

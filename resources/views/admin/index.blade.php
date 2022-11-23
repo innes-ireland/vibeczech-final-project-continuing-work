@@ -29,7 +29,7 @@
       @vite('resources/js/work-party-modal.jsx')    
     </div>
     
-    <div id='current_work_parties'>
+    <div id='current_workteams'>
       @viteReactRefresh
       @vite('resources/js/currentWorkTeams')
     </div>
@@ -44,7 +44,6 @@
 
   <div class="worker_dropdown_container">
     <div id='worker_dropdown'>
-      <h5>worker dropdown-I'm in resources/views/admin/index.blade.php</h5>
     @viteReactRefresh
     @vite('resources/js/workerDropdown.jsx')
     </div>

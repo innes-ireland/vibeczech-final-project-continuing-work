@@ -6,17 +6,24 @@ import getCurrentUser from '../getCurrentUser';
 
 export default function Login() {
 
-  const [modalVisible, setModalVisible] = useState(false);
+  // allows registration modal to be hidden until clicked
+  const [modalVisible, setModalVisible] = useState(null);
+  const [modalOpaque, setModalOpaque] = useState(true)
+
   const { user, setUser } = useContext(UserContext);
+  // a place for user-supplied form values
   const [values, setValues] = useState({
     email: '',
     password: ''
   })
 
+  // gets current user when page loads
   useEffect(() => {
     getCurrentUser();
   }, [])
 
+
+  // allows the user to login and redirects to their landing page
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -33,6 +40,8 @@ export default function Login() {
         const data = response.data;
         setUser(data);
 
+        // redirects user based on whether they are admin or
+        // just a worker
         data && data.is_admin
           ?
           window.location.replace('/admin')
@@ -57,6 +66,7 @@ export default function Login() {
     }
   }
 
+  // saves what the user inputs for login
   const handleChange = (event) => {
     setValues(previous_values => {
       return ({
@@ -78,9 +88,14 @@ export default function Login() {
     setModalVisible(true)
   }
 
+  useEffect(() => {
+    (modalVisible != null) && setModalOpaque(!modalOpaque)
+  }, [modalVisible])
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div>
+        {/* login form */}
         <h1>- Login -</h1>
         <form id='login-form' action="/login" method="post" onSubmit={handleSubmit}>
           <label htmlFor='email'>Email</label>
@@ -98,9 +113,10 @@ export default function Login() {
           }}>Get current user</span>
         </form>
 
+        {/* code for registraton modal, only shows if register has been clicked */}
         {
           modalVisible ?
-            <div id='modal' className='modal' onClick={hideModal}>
+            <div id='modal' className={'modal' + (modalOpaque ? ' modal-opaque' : '')} onClick={hideModal}>
               <div className='modal__content registration-modal'>
                 <Register
                   setModalVisible={setModalVisible} />

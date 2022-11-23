@@ -29,7 +29,7 @@ const Logout = ({ user, setUser }) => {
         ?
         <></>
         :
-        <div>
+        <div id='logout-holder'>
           <p>{user.username}</p>
           <p id='logout' onClick={handleLogout}>LOGOUT</p>
         </div>
