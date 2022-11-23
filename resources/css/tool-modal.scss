@@ -67,3 +67,11 @@ button {
     font-family: 'Open Sans', Tahoma;
     font-size: 1.2rem;
 }
+
+@media only screen and (max-width: 800px)and (min-width: 360px) {
+    form {
+
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
