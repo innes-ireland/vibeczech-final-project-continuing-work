@@ -1,5 +1,5 @@
 <div class="footer">
 
-  <p>this is a footer!</p>
+  <p>by the mere mortals</p>
 
 </div>

@@ -17,16 +17,17 @@ export default function CurrentWorkTeams() {
     }, [])
 
     return (
-        <div>
+        <>
             {
                 !teams
                     ? <></>
                     : teams.map(team => {
                         return <WorkTeam
+                            key={team.id}
                             team={team}
                         />
                     })
             }
-        </div>
+        </>
     )
 }
