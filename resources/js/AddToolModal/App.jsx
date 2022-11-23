@@ -1,5 +1,7 @@
 import React from 'react';
-
+import icon from '../../../public/icons/chain-saw.png';
+import icon2 from '../../../public/icons/circular-saw.png';
+import icon3 from '../../../public/icons/road-drill.png';
 import { useState, useEffect } from 'react';
 
 export default function App() {
@@ -95,7 +97,13 @@ export default function App() {
                 modalVisible ?
                     <div id='modal_add_tool' className='modal' onClick={hideModal}>
                         <div className='modal__content'>
+
                             <h1 >Add Tools</h1>
+                            <div className='icons_display'>
+                                <img src={icon} alt="" />
+                                <img src={icon2} alt="" />
+                                <img src={icon3} alt="" /></div>
+
                             <form action="/api/tools/add" method="post" >
 
                                 Name:<br />
