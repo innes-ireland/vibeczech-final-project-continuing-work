@@ -31,7 +31,7 @@
     
     <div id='current_workteams'>
       @viteReactRefresh
-      @vite('resources/js/currentWorkTeams')
+      @vite('resources/js/currentWorkTeams.jsx')
     </div>
   </div>
 

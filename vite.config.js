@@ -6,7 +6,6 @@ export default defineConfig({
   plugins: [
     laravel({
       input: [
-        'resources/css/app.css',
         'resources/css/login.scss',
         'resources/css/register.scss',
         'resources/css/worker-detail.scss',
@@ -14,14 +13,18 @@ export default defineConfig({
         'resources/css/universal-index.css',
         'resources/js/Admin.jsx',
         'resources/js/app.js',
-        'resources/js/registration-modal.jsx',
+        // 'resources/js/registration-modal.jsx',
         'resources/js/add-tool-modal.jsx',
         'resources/js/work-party-modal.jsx',
-        'resources/js/Logout.jsx',
+        'resources/js/Login.jsx',
         'resources/js/Worker.jsx',
-        'resources/js/ExposureCalculator.jsx',
+        'resources/js/exposure-calculator.jsx',
         'resources/js/workerDropdown.jsx',
         'resources/css/tool-modal.scss',
+        'resources/js/header.jsx',
+        'resources/css/admin.scss',
+        'resources/js/currentWorkTeams.jsx',
+
       ],
       refresh: true,
     }),
