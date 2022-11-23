@@ -8,7 +8,7 @@ import SelectorBox from './CalculatorComponents/SelectorBox';
 import SaveToPlan from './CalculatorComponents/SaveToPlan';
 import DisplayGraph from './CalculatorComponents/DisplayGraph';
 import WorkTeamSelector from './CalculatorComponents/WorkTeamSelector';
-import SubmitInstance from './CalculatorComponents/SubmitPlan';
+
 
 
 
@@ -23,7 +23,7 @@ function App() {
     const [graphData, setGraphData] = useState({})
     const [selectedTeamId, setSelectedTeamId] = useState(0)
     const [teams, setTeams] = useState([])
-    const [workers, setWorkers] = useState([])
+
 
 
 
