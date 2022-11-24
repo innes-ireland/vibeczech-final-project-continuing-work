@@ -46,7 +46,7 @@ function App() {
             <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
             {/* </SelectorBox> */}
             <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
-            <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} minuteCount={minuteCount} />
+            <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} minuteCount={minuteCount} tool={tool} />
             <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
             {/* </Wrapper> */}
 

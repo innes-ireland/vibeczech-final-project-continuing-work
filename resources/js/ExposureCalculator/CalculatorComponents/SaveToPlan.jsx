@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HourCount from "./HourCount";
 import MinuteCount from "./MinuteCount";
-export default function SaveToPlan({ product, user, planObjects, setPlanObjects, hourCount, minuteCount }) {
+export default function SaveToPlan({ product, user, planObjects, setPlanObjects, hourCount, minuteCount, tool }) {
     const [exposureInstanceValues, setExposureInstanceValues] = useState({
         plan_id: '',
         user_id: '',
@@ -61,7 +61,7 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects,
             exposure_start: '',
             exposure_finish: '',
             duration_minutes: hourCount + (minuteCount / 60),
-            tool_id: '',
+            tool_id: tool.id,
         }
 
         console.log(completedInstance);
