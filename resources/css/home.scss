@@ -22,15 +22,62 @@
     }
 }
 
+.animation2 {
+    position: relative;
+    animation: animation 3s ease-out;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
 
 @keyframes animation2 {
     0% {
         opacity: 0;
-        right: -700px;
+        right: 2700px;
     }
 
     100% {
         opacity: 1;
-        left: 0;
+        right: 0;
     }
 }
+
+
+
+
+// #slide-in2 {
+//     animation: right_to_left 2s ease-in;
+
+// }
+
+// // .animation2 {
+// //     -moz-animation-duration: 3s;
+// //     -webkit-animation-duration: 3s;
+// //     -moz-animation-name: slidein-right;
+// //     -webkit-animation-name: slidein-right;
+// // }
+
+
+// .animation2 {
+//     width: 100%;
+//     overflow: hidden;
+// }
+
+// .animation2 {
+//     animation: slide-left 10s;
+// }
+
+// @keyframes animation2 {
+//     from {
+//         margin-left: 100%;
+//         width: 300%;
+//     }
+
+//     to {
+//         margin-left: 0%;
+//         width: 100%;
+//     }
+// }
