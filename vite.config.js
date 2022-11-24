@@ -10,6 +10,7 @@ export default defineConfig({
         'resources/css/login.scss',
         'resources/css/register.scss',
         'resources/css/tool-modal.scss',
+        'resources/css/work-party-modal.scss',
         'resources/css/worker-detail.scss',
         'resources/css/modal.css',
         'resources/css/universal-index.css',

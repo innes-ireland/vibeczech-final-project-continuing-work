@@ -6,6 +6,7 @@
   @vite('resources/css/admin.scss')
   @vite('resources/css/modal.css')
   @vite('resources/css/tool-modal.scss')
+  @vite('resources/css/work-party-modal.scss')
 @endsection
 
 

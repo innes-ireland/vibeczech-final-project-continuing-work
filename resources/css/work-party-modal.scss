@@ -1,4 +1,4 @@
-.modal_add_tool {
+.modal_work_party {
     background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
     left: 0;
@@ -9,12 +9,12 @@
     z-index: 1;
 }
 
-.modal__content-add-tool {
+.modal_work_party_content {
     background: #1f1f1f;
     background: -webkit-linear-gradient(0deg, #1f1f1f 0%, #101010 100%);
     background: linear-gradient(0deg, #1f1f1f 0%, #101010 100%);
     border-radius: 4px;
-    height: 80%;
+    height: 150%;
     margin: 5% auto;
     padding: 20px;
     width: 50%;
@@ -63,7 +63,7 @@
     padding: 0.4rem 0.35rem;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.7);
     margin-top: 15px;
-    color: black;
+    color: white;
     font-family: 'Open Sans', Tahoma;
     font-size: 1.2rem;
 }
@@ -76,16 +76,39 @@
     }
 }
 
-.success-message-tool {
+.input-items {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.users_display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin: 12px;
 
-.modal_add_tool-form-button:hover {
-    color: black;
+}
 
+.users_display-name {
+    margin: 0;
+}
+
+.list-of-workers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    margin: 12px;
+}
+
+.list-of-workers-name {
+    margin: 0;
+}
+
+.list-of-workers-list {
+    margin: 0;
+    padding: 0;
 }
