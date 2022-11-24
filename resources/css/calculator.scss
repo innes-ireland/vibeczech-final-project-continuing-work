@@ -1,0 +1,209 @@
+.calculator {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 10px;
+
+    .selectors {
+        display: flex;
+        height: 2em;
+        width: 100%;
+
+        select {
+            margin-left: 8px;
+            margin-right: 8px;
+            width: 35%;
+        }
+    }
+
+    .hour {
+        width: 50%;
+    }
+
+    .minute {
+        width: 50%;
+    }
+
+    button {
+        margin: 8px;
+    }
+
+    .reset {
+        background-color: #000000;
+        border: 1px solid #dc4c18;
+        color: #dc4c18;
+    }
+
+    .reset:hover {
+        background-color: #ffffff;
+    }
+
+    .remove {
+        background-color: #000000;
+        border: 1px solid #dc4c18;
+        color: #dc4c18;
+        height: 1.6em;
+    }
+
+    .remove:hover {
+        background-color: #ffffff;
+    }
+
+    span {
+        font-size: 1.2em;
+    }
+
+    .calc_line {
+        text-align: right;
+        width: 55%;
+    }
+
+    .save_line {
+        width: 45%;
+    }
+
+    .current_plan {
+        width: 100%;
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+
+            li {
+                list-style: none;
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .calculator {
+
+        .hour {
+            text-align: center;
+        }
+
+        .minute {
+            text-align: center;
+        }
+
+        button {
+            margin: 8px;
+        }
+
+        .current_plan {
+
+            ul {
+
+                li {
+                    font-size: 0.6em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .calculator {
+
+        .hour {
+            text-align: right;
+        }
+
+        .minute {
+            text-align: left;
+        }
+
+        .current_plan {
+
+            ul {
+
+                li {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .calculator {
+
+        .hour {
+            text-align: right;
+        }
+
+        .minute {
+            text-align: left;
+        }
+
+        button {
+            height: 2.5em;
+        }
+
+        .current_plan {
+
+            ul {
+
+                li {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .calculator {
+
+        .hour {
+            text-align: right;
+        }
+
+        .minute {
+            text-align: left;
+        }
+
+        button {
+            height: 2.5em;
+        }
+
+        .current_plan {
+
+            ul {
+
+                li {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .calculator {
+
+        .hour {
+            text-align: right;
+        }
+
+        .minute {
+            text-align: left;
+        }
+
+        button {
+            height: 2.5em;
+        }
+
+        .current_plan {
+
+            ul {
+
+                li {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}

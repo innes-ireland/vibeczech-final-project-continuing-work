@@ -66,10 +66,19 @@ export default function App() {
     setWorkers(new_workers)
   };
 
-  const deleteParty = (id) => {
-    const newParty = party.filter((temp2) => temp2.id !== id);
+  const deleteParty = (user) => {
+    const newParty = party.filter((temp2) => temp2.id !== user.id);
+
+    const new_workers = workers.concat({
+
+      id: user.id,
+      first_name: user.name,
+      last_name: user.last_name,
+
+    })
 
     setParty(newParty);
+    setWorkers(new_workers)
   };
   //-------add and remove function-----------
 
@@ -149,21 +158,23 @@ export default function App() {
                 {party.map(user => {
                   return <li key={user.id} className='list-of-workers'>
                     <p className='list-of-workers-name'>{user.name} {user.last_name}</p>
-                    <button onClick={() => deleteParty(user.id)}>&times;</button>
+                    <button onClick={() => deleteParty(user)}>&times;</button>
                   </li>
                 })}
               </ul>
 
               <hr></hr>
-              {
-                workers.map(worker => {
-                  return <div className='users_display' key={worker.id}>
-                    <p className='users_display-name'>{worker.first_name} {worker.last_name}</p>
-                    <button onClick={() => addParty(worker)
-                    }>Add</button>
-                  </div>
-                })
-              }
+              <div className='users'>
+                {
+                  workers.map(worker => {
+                    return <div className='users_display' key={worker.id}>
+                      <p className='users_display-name'>{worker.first_name} {worker.last_name}</p>
+                      <button onClick={() => addParty(worker)
+                      }>Add</button>
+                    </div>
+                  })
+                }
+              </div>
             </div>
           </div>
           :

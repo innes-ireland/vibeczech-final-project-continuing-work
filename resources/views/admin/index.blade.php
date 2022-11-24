@@ -25,7 +25,7 @@
       @vite('resources/js/add-tool-modal.jsx')
     </div>
     <div class='button_div'>
-      <a href="http://www.vibeczech.test/exposure-calculator" id="exposure-redirect">
+      <a href="/exposure-calculator" id="exposure-redirect">
         Exposure Calculator
       </a> 
     </div> 

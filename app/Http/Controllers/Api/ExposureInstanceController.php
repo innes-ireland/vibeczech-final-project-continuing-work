@@ -50,4 +50,12 @@ class ExposureInstanceController extends Controller
         ];
 
     }
+
+    // shows specific exposure record
+    public function show($id)
+    {
+      $exposure = ExposureInstance::find($id);
+
+      return $exposure;
+    }
 }

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 // // get to admin without being logged in as an admin
 // Route::get('/admin', [AdminController::class, 'index']);
@@ -28,7 +28,7 @@ Route::get('/', [LoginController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index'])->middleware('can:admin');
 
 // needs to make sure I'm feeding in the right stuff
-Route::post('/edit-record/{$recordId}', [AdminController::class, 'editThisRecord'])->middleware('can:admin');
+Route::post('/edit-record/{recordId}', [AdminController::class, 'editThisRecord'])->middleware('can:admin');
 Route::get('/exposure-calculator', [AdminController::class, 'exposureCalculator'])->middleware('can:admin');
 
 Route::get('/records/{workerId?}', [AdminController::class, 'workerRecords'])->middleware('can:admin');

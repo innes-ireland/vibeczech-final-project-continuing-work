@@ -101,24 +101,27 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects,
 
     return (
         <>
-            <button onClick={saveToPlan}> save to plan</button>
+            <div className="save_line">
+                <button onClick={saveToPlan}> Save Plan</button>
+            </div>
+            <div className="current_plan">
+                <ul>
+                    {planObjects.map(planObject => {
 
-            <ul>
-                {planObjects.map(planObject => {
+                        return <li>
+                            Worker: {planObject.name} |  Vibration Exposure:{planObject.exposureLevel}
 
-                    return <li>
-                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel}
+                            <button type="button" className="remove" onClick={() => { removeWorker(planObject.id) }}> X</button>
 
-                        <button type="button" onClick={() => { removeWorker(planObject.id) }}> X</button>
-
-                        <button onClick={(event) => { handleSubmitInstance(event) }}>send to DB</button>
-                    </li>
+                            <button onClick={(event) => { handleSubmitInstance(event) }}>Send to DB</button>
+                        </li>
 
 
-                })}
+                    })}
 
 
-            </ul>
+                </ul>
+            </div>
         </>
     )
 

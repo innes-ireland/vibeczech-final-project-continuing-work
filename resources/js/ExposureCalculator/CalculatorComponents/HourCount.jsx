@@ -26,7 +26,7 @@ export default function HourCount({ hourCount, setHourCount }) {
             <button onClick={() => incrementHour(1)}> +1 Hour</button>
             <span>{hourCount}</span>
             <button onClick={() => decrementHour(1)}> -1 Hour </button>
-            <button onClick={() => resetHourCount()}> reset</button>
+            <button className="reset" onClick={() => resetHourCount()}> Reset</button>
         </>
 
     )
