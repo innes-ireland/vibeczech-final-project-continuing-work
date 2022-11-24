@@ -18,7 +18,9 @@ const Logout = ({ user, setUser }) => {
 
     await logout();
     console.log('logging out');
-    window.location.replace('/');
+    // window.location.replace('/');
+
+    window.location.replace('/login');
 
     setUser(null);
   }
