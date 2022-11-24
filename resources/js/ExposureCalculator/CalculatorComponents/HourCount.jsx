@@ -5,10 +5,14 @@ export default function HourCount({ hourCount, setHourCount }) {
 
 
 
-    function changeHour(amount) {
-        if (hourCount >= 0 && hourCount <= 8)
+    function incrementHour(amount) {
+        if ((hourCount + 1) > 0 && hourCount < 8)
             setHourCount(hourCount => hourCount + amount)
 
+    }
+    function decrementHour(amount) {
+        if (hourCount > 0)
+            setHourCount(hourCount => hourCount - amount)
     }
 
     function resetHourCount() {
@@ -19,10 +23,10 @@ export default function HourCount({ hourCount, setHourCount }) {
     return (
         <>
 
-            <button onClick={() => changeHour(1)}> +1 Hour</button>
+            <button onClick={() => incrementHour(1)}> +1 Hour</button>
             <span>{hourCount}</span>
-            <button onClick={() => changeHour(-1)}> -1 Hour </button>
-            <button onClick={() => resetHourCount}> reset</button>
+            <button onClick={() => decrementHour(1)}> -1 Hour </button>
+            <button onClick={() => resetHourCount()}> reset</button>
         </>
 
     )

@@ -88,52 +88,52 @@ export default function App() {
             < a href='#' id='modalTrigger' onClick={showModal} > Add tool</a >
             {
                 successMessage
-                    ? <div className="success-message">{successMessage}</div>
+                    ? <div className="success-message-tool"><p>{successMessage}</p></div>
                     : ''
             }
 
 
             {
                 modalVisible ?
-                    <div id='modal_add_tool' className='modal' onClick={hideModal}>
-                        <div className='modal__content'>
+                    <div id='modal_add_tool' className='modal modal_add_tool' onClick={hideModal}>
+                        <div className='modal__content-add-tool'>
 
                             <h1 >Add Tools</h1>
                             <div className='icons_display'>
-                                <img src={icon} alt="" />
-                                <img src={icon2} alt="" />
-                                <img src={icon3} alt="" /></div>
+                                <img className='icons_display-img' src={icon} alt="chain-saw" />
+                                <img className='icons_display-img' src={icon2} alt="circular-saw" />
+                                <img className='icons_display-img' src={icon3} alt="road-drill" /></div>
 
-                            <form action="/api/tools/add" method="post" >
+                            <form className='modal_add_tool-form' action="/api/tools/add" method="post" >
 
                                 Name:<br />
-                                <input type="text" name="name"
+                                <input className='modal_add_tool-form-input' type="text" name="name"
                                     value={values.name}
                                     onChange={handleChange}
                                 />
                                 <br />
 
                                 Manufacturer:<br />
-                                <input type="text" name="manufacturer"
+                                <input className='modal_add_tool-form-input' type="text" name="manufacturer"
                                     value={values.manufacturer}
                                     onChange={handleChange}
                                 />
                                 <br />
 
                                 Vibration magnitude:<br />
-                                <input type="text" name="vibration_rating"
+                                <input className='modal_add_tool-form-input' type="text" name="vibration_rating"
                                     value={values.vibration_rating}
                                     onChange={handleChange}
                                 />
                                 <br />
 
                                 Noise level:<br />
-                                <input type="text" name="noise_rating"
+                                <input className='modal_add_tool-form-input' type="text" name="noise_rating"
                                     value={values.noise_rating}
                                     onChange={handleChange}
                                 />
                                 <br />
-                                <button id='button_add_tool' onClick={(e) => {
+                                <button className='modal_add_tool-form-button' id='button_add_tool' onClick={(e) => {
                                     handleSubmit(e)
                                     hideModal(e)
                                 }}>Add tool</button>

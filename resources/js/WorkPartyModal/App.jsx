@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import icon from '../../../public/icons/foreman.png';
+import icon2 from '../../../public/icons/foremaner.png';
+import icon3 from '../../../public/icons/1670444.png';
 
 import { useState, useEffect } from 'react';
 
@@ -63,10 +66,19 @@ export default function App() {
     setWorkers(new_workers)
   };
 
-  const deleteParty = (id) => {
-    const newParty = party.filter((temp2) => temp2.id !== id);
+  const deleteParty = (user) => {
+    const newParty = party.filter((temp2) => temp2.id !== user.id);
+
+    const new_workers = workers.concat({
+
+      id: user.id,
+      first_name: user.name,
+      last_name: user.last_name,
+
+    })
 
     setParty(newParty);
+    setWorkers(new_workers)
   };
   //-------add and remove function-----------
 
@@ -125,21 +137,16 @@ export default function App() {
       < a href='#' id='modalTrigger' onClick={showModal} > Create Work Party</a >
       {
         modalVisible ?
-          <div id='modal_work_party' className='modal' onClick={hideModal}>
-            <div className='modal__content'>
+          <div id='modal_work_party' className='modal modal_work_party' onClick={hideModal}>
+            <div className='modal__content modal_work_party_content'>
               <h1 >Work Party</h1>
-              <div>
-                <div>Short job description: <input type="text" name="job" value={values.job} onChange={handleChange} /></div>
-                <div>Date: <input type="date" name="work_date" value={values.work_date} onChange={handleChange}></input></div>
-                <ul>
-                  {party.map(user => {
-                    return <li key={user.id}>
-                      <p>{user.name} {user.last_name}</p>
-                      <button onClick={() => deleteParty(user.id)}>&times;</button>
-                    </li>
-                  })}
-                </ul>
-
+              <div className='icons_display'>
+                <img className='icons_display-img' src={icon} alt="chain-saw" />
+                <img className='icons_display-img' src={icon2} alt="circular-saw" />
+                <img className='icons_display-img' src={icon3} alt="road-drill" /></div>
+              <div className='input-items'>
+                <div className='job_description'>Short job description: <input type="text" name="job" value={values.job} onChange={handleChange} /></div>
+                <div className='date'>Date: <input type="date" name="work_date" value={values.work_date} onChange={handleChange}></input></div>
                 {/* below is POST request to send data to database */}
                 <form action="/api/new-work-party" method="post" >
                   <button id='button_add_party'
@@ -147,10 +154,20 @@ export default function App() {
                   >Create Work Party</button>
                 </form>
               </div>
+              <ul className='list-of-workers-list' >
+                {party.map(user => {
+                  return <li key={user.id} className='list-of-workers'>
+                    <p className='list-of-workers-name'>{user.name} {user.last_name}</p>
+                    <button onClick={() => deleteParty(user)}>&times;</button>
+                  </li>
+                })}
+              </ul>
+
+              <hr></hr>
               {
                 workers.map(worker => {
                   return <div className='users_display' key={worker.id}>
-                    <p>{worker.first_name} {worker.last_name}</p>
+                    <p className='users_display-name'>{worker.first_name} {worker.last_name}</p>
                     <button onClick={() => addParty(worker)
                     }>Add</button>
                   </div>
