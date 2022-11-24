@@ -30,12 +30,27 @@
 
     @viteReactRefresh    
     @vite("resources/js/homepage.jsx")
-    <h1 id="slide-in" class="animation">
+    <h1 id="slide-in-text" class="animation-no">
                 VibeCzech
 </h1>
-<h3 id="slide-in2" class="animation2">Designed to allow both management and operators to calculate, monitor and plan exposure to hand arm vibrations (HAV's) from power tool operation.</h3>
-<img src=<img src="{{ asset('/icons/chain-saw.png')}}" alt="">
+<h3 id="slide-in" class="animation">Designed to allow both management and operators to calculate, monitor and plan exposure to hand arm vibrations (HAV's) from power tool operation.</h3>
+<div class="images-div">
+<img src="{{ Vite::asset('public/icons/work-list.png') }}" alt="work-list" class="homepage-image">
+<img src="{{ Vite::asset('public/icons/chain-saw.png') }}" alt="chain-saw" class="homepage-image">
+<img src="{{ Vite::asset('public/icons/worker.png') }}" alt="worker" class="homepage-image">
 
+</div>
+  <div class="container">
+    <div class="center">
+      <button class="btn">
+        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+        </svg>
+        <span><a>LOGIN/REGISTER</a></span>
+      </button>
+    </div>
+  </div>
     
 
 </div>

@@ -1,39 +1,40 @@
-.animation {
-    position: relative;
-    animation: animation 2s ease-out;
-}
+// .animation {
+//     position: relative;
+//     animation: animation 2s ease-out;
+// }
 
-#slide-in {
+#slide-in-text {
     text-align: center;
     color: #dc4c18;
     font-family: 'Zen Dots', cursive;
     font-size: 5rem;
 }
 
-@keyframes animation {
-    0% {
-        opacity: 0;
-        left: -700px;
-    }
+// @keyframes animation {
+//     0% {
+//         opacity: 0;
+//         left: -700px;
+//     }
 
-    100% {
-        opacity: 1;
-        left: 0;
-    }
-}
+//     100% {
+//         opacity: 1;
+//         left: 0;
+//     }
+// }
 
-.animation2 {
+.animation {
     position: relative;
-    animation: animation 3s ease-out;
+    animation: animation 2s ease-out;
     text-align: center;
     font-size: 1.2rem;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 13%;
 
 }
 
 
-@keyframes animation2 {
+@keyframes animation {
     0% {
         opacity: 0;
         right: 2700px;
@@ -46,38 +47,98 @@
 }
 
 
+.homepage-image {
+    width: 10%;
+    height: auto;
+}
+
+.images-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
 
 
-// #slide-in2 {
-//     animation: right_to_left 2s ease-in;
 
-// }
-
-// // .animation2 {
-// //     -moz-animation-duration: 3s;
-// //     -webkit-animation-duration: 3s;
-// //     -moz-animation-name: slidein-right;
-// //     -webkit-animation-name: slidein-right;
-// // }
+// button
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
 
 
-// .animation2 {
-//     width: 100%;
-//     overflow: hidden;
-// }
 
-// .animation2 {
-//     animation: slide-left 10s;
-// }
+.container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-// @keyframes animation2 {
-//     from {
-//         margin-left: 100%;
-//         width: 300%;
-//     }
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
 
-//     to {
-//         margin-left: 0%;
-//         width: 100%;
-//     }
-// }
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #f14906;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #e57104;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+
+@media only screen and (max-width: 460px) {
+    .animation {
+
+        margin-top: 90%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .animation {
+
+        margin-top: 30%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .animation {
+
+        margin-top: 20%;
+    }
+}
