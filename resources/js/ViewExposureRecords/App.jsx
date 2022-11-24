@@ -28,6 +28,12 @@ export default function App() {
     loadExposure();
   }, [])
 
+  const goBackToAdmin = (event) => {
+
+    event.preventDefault();
+    window.location.replace('/admin');
+  }
+
   //-------getting data to populate table from exposure instance table-------
 
 
@@ -35,34 +41,38 @@ export default function App() {
 
   return (
 
-    <div>
+    <>
 
-      {console.log(exposure)}
+      <button id='goBackToAdmin' name='goBackToAdmin' onClick={(e) => { goBackToAdmin(e) }}>Back to Admin Page</button>
+      <div>
+
+        {console.log(exposure)}
 
 
-      <h2>Personal Data:</h2>
-      <table>
-        <tr>
-          <th>Start Date</th>
-          <th>Tool</th>
-          <th>Exposure Value</th>
-          <th>Duration</th>
-        </tr>
-        {
-          exposure.map(exp => {
-            return <tr key={exp.id}>
-              <td>{exp.exposure_start}</td>
-              <td>{exp.tool?.name}</td>
-              <td>{exp.exposure_value}</td>
-              <td>{exp.duration_minutes} hours</td>
-              <td> <a href={'/show-record/' + exp.id}>Edit</a></td>
-            </tr>
-          })
-        }
+        <h2>Personal Data:</h2>
+        <table>
+          <tr>
+            <th>Start Date</th>
+            <th>Tool</th>
+            <th>Exposure Value</th>
+            <th>Duration</th>
+          </tr>
+          {
+            exposure.map(exp => {
+              return <tr key={exp.id}>
+                <td>{exp.exposure_start}</td>
+                <td>{exp.tool?.name}</td>
+                <td>{exp.exposure_value}</td>
+                <td>{exp.duration_minutes} hours</td>
+                <td> <a href={'/show-record/' + exp.id}>Edit</a></td>
+              </tr>
+            })
+          }
 
-      </table>
+        </table>
 
-    </div>
+      </div>
+    </>
 
   )
 }

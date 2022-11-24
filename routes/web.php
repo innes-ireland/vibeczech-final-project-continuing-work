@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 // // get to admin without being logged in as an admin
 // Route::get('/admin', [AdminController::class, 'index']);

@@ -113,55 +113,69 @@ export default function App() {
           console.log('UNKNOWN ERROR', response_data);
           break;
       }
+
     }
 
+  }
+
+  const goBackToWorkerRecords = (event) => {
+
+    event.preventDefault();
+    window.location.replace('/records/' + record.user_id);
   }
 
   // ---------- form for editing exposure instance record
 
   return (
 
-    <div>
-      <form action="/record/recordId" method="post">
+    <>
+      <button id='goBackToAdmin' name='goBackToAdmin' onClick={(e) => { goBackToWorkerRecords(e) }}>Back to Exposure Records</button>
 
-        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
+      <div>
+        <form action="/" method="post">
 
-        {/* -------getting data to populate tools dropdown from tools table------- */}
-        {/* ------think I need some kind of placeholder or other way to say what the current tool is */}
+          <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
+
+          {/* -------getting data to populate tools dropdown from tools table------- */}
+          {/* ------think I need some kind of placeholder or other way to say what the current tool is */}
 
 
-        Tool (currently):<br />
-        <select id="selectTool" name="tool_id" onChange={handleChange} value={currentToolId}>
-          {
-            // populates the dropdown with tools
-            tools.map(tool => {
-              return <option key={tool.id} value={tool.id}>{tool.name}</option>
-            })
-          }
-        </select>
-        <br />
+          Tool (currently):<br />
+          <select id="selectTool" name="tool_id" onChange={handleChange} value={currentToolId}>
+            {
+              // populates the dropdown with tools
+              tools.map(tool => {
+                return <option key={tool.id} value={tool.id}>{tool.name}</option>
+              })
+            }
+          </select>
+          <br />
 
-        Exposure Value:<br />
-        <input className='edit-record-form-input' type="text" name="exposure_value"
-          value={editedRecord.exposure_value}
-          onChange={handleChange}
-        // placeholder={record.exposure_value}
-        />
-        <br />
+          Exposure Value:<br />
+          <input className='edit-record-form-input' type="text" name="exposure_value"
+            value={editedRecord.exposure_value}
+            onChange={handleChange}
+          // placeholder={record.exposure_value}
+          />
+          <br />
 
-        Duration in Hours:<br />
-        <input className='edit-record-form-input' type="text" name="duration_minutes"
-          value={editedRecord.duration_minutes}
-          onChange={handleChange}
-        // placeholder={record.duration_minutes}
-        />
-        <br />
+          Duration in Hours:<br />
+          <input className='edit-record-form-input' type="text" name="duration_minutes"
+            value={editedRecord.duration_minutes}
+            onChange={handleChange}
+          // placeholder={record.duration_minutes}
+          />
+          <br />
 
-        <button id='updateExposureRecord' name='updateExposureRecord' onClick={(e) => { handleSubmit(e) }}>Update Exposure Record</button>
+          <button id='updateExposureRecord' name='updateExposureRecord' onClick={(e) => {
+            handleSubmit(e)
+            goBackToWorkerRecords(e)
+          }}>Update Exposure Record</button>
 
-      </form>
+        </form>
 
-    </div>
+      </div>
+    </>
 
   )
 }
