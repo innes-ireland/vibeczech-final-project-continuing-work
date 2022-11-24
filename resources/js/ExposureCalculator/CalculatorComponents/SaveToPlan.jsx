@@ -61,7 +61,7 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects,
             exposure_start: '',
             exposure_finish: '',
             duration_minutes: hourCount + (minuteCount / 60),
-            tool_id: tool.id,
+            tool_id: '',
         }
 
         console.log(completedInstance);
