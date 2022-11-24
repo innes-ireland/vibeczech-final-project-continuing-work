@@ -14,5 +14,12 @@ class ExposureInstanceController extends Controller
         return $exposure;
     }
 
+    public function show($id)
+    {
+      $exposure = ExposureInstance::find($id);
+
+      return $exposure;
+    }
+
 
 }

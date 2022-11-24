@@ -33,3 +33,5 @@ Route::get('/worker/{id?}', [App\Http\Controllers\Api\WorkerController::class, '
 
 // gets specific exposure instance
 Route::get('/exposure/{id}', [App\Http\Controllers\Api\ExposureInstanceController::class, 'index']);
+
+Route::get('/exposure-detail/{id}', [App\Http\Controllers\Api\ExposureInstanceController::class, 'show']);

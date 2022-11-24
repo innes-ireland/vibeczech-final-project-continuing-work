@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ExposureInstance;
+use App\Models\Tool;
 use App\Models\User;
 use App\Models\WorkTeam;
+
 
 class AdminController extends Controller
 {
@@ -44,7 +47,7 @@ class AdminController extends Controller
         // // If my other way doesn't work then...
         // // TODO: need to make this select all records with user_id = to $id
         // $records = DB::select('select * from student');
-        // return view('worker.records',['records'=>$records]);
+        // return view('worker.records',[records'=>$records]);
 
         $worker = User::find($id);
 
@@ -53,23 +56,45 @@ class AdminController extends Controller
 
     // shows table to edit one record
     public function showThisRecord($recordId = 0) {
-        // // TODO: need to make this select record that matches $recordId
-        // $record = DB::select('select * from student where id = ?',[$id]);
-        // return view('worker.edit-record',['record'=>$record]);
+        // $record = ExposureInstance::find($recordId);
+        // $tools = Tool::get();
 
-        return view('worker.edit-record');
+        // return view('worker.edit-record', compact([
+        //   'record', 
+        //   // 'tools'
+        // ]));
+
+        return view('worker.edit-record', compact(['recordId']));
+        
     }
 
     // actually updates the database, needs serious editing
     public function editThisRecord(Request $request,$recordId) {
       // I think I'm going to need a var like this for each thing that can
       // be edited?
-        $name = $request->input('stud_name');
+
+        // need dropdown of tools for this in the form that gives me tool_id
+        $tool = $request->input('tool');
+
+        // no fucking clue how to feed this one in
+        $duration = $request->input('duration');
+
+        // just a text field that only accepts numbers if possible
+        $expVal = $request->input('exposure_value');
+
         // unsure how this needs to be edited
-        DB::update('update student set name = ? where id = ?',[$name,$id]);
+        DB::update('
+        update exposure_instance 
+        set tool_id = ? 
+        set duration_minutes = ?
+        set exposure_value = ?
+        where id = ?
+        ',[$tool, $duration, $expVal, $recordId]);
+
+
         echo "Record updated successfully.<br/>";
 
         // TODO: maybe just make this a button that's always available on this page instead
-        echo '<a href = "/records">Click Here</a> to go back.';
+        echo '<a href = "/show-record/?">Click Here</a> to go back.', [$recordId];
     }
 }
