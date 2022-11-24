@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // POST  for adding tools to database 
 
 Route::post('/tools/add', [App\Http\Controllers\Api\AddToolController::class, 'store']);
+// route for sending exposure instance data to DB
+Route::post('/exposure-instance', [App\Http\Controllers\Api\ExposureInstanceController::class, 'sendExposureData']);
 //get tools for exposure calculator to use
 Route::get('/tools', [App\Http\Controllers\Api\ToolSelectorController::class, 'getTool']);
 //retrieve work party for exposure calculator/visualiser

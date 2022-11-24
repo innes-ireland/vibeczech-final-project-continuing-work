@@ -1,11 +1,19 @@
-<<<<<<< HEAD
-<? 
-use App\Models\PlannedExposure;
-use App\Models\User;
 
-class PlannedExposureController extends Controller
+<?php
+namespace App\Http\Controllers\Api;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\ExposureInstance;
+use App\Models\User;
+use App\Models\Tool;
+
+class ExposureInstanceController extends Controller
 {
-    public function sendExposureData(Request $request)
+    public function index($id) {
+        $exposure = ExposureInstance::where('user_id',$id)->with('tool')->get();
+        return $exposure;
+    }
+ public function sendExposureData(Request $request)
     {
         $data = $request->all();
         
@@ -35,24 +43,6 @@ class PlannedExposureController extends Controller
             'status' => 'success',
             'exposureInstance' => $exposureInstance
         ];
+
     }
-=======
-<?php
-
-namespace App\Http\Controllers\Api;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\ExposureInstance;
-use App\Models\User;
-use App\Models\Tool;
-
-class ExposureInstanceController extends Controller
-{
-    public function index($id) {
-        $exposure = ExposureInstance::where('user_id',$id)->with('tool')->get();
-        return $exposure;
-    }
-
-
->>>>>>> main
 }
