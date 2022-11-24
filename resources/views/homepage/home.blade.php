@@ -12,10 +12,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik+Mono+One&family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet"> 
         <!-- Styles -->
         @vite('resources/css/universal-index.css')
-        @vite('resources/css/tool-modal.scss')
+        @vite('resources/css/home.scss')
         
         @yield('head')
     </head>
@@ -31,6 +33,8 @@
     <h1 id="slide-in" class="animation">
                 VibeCzech
 </h1>
+<h3 id="slide-in2" class="animation2">Designed to allow both management and operators to calculate, monitor and plan exposure to hand arm vibrations (HAV's) from power tool operation.</h3>
+
     
 
 </div>

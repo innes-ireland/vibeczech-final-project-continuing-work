@@ -1,0 +1,36 @@
+.animation {
+    position: relative;
+    animation: animation 2s ease-out;
+}
+
+#slide-in {
+    text-align: center;
+    color: #dc4c18;
+    font-family: 'Zen Dots', cursive;
+    font-size: 5rem;
+}
+
+@keyframes animation {
+    0% {
+        opacity: 0;
+        left: -700px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+
+@keyframes animation2 {
+    0% {
+        opacity: 0;
+        right: -700px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
