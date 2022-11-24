@@ -26,18 +26,18 @@ export default function App() {
     setSelectedWorkerId(event.target.value);
   }
 
-  // redirects to selected worker's detail page
-  const goToWorkerDetail = (event) => {
+  // redirects to selected worker's records page
+  const goToWorkerRecords = (event) => {
     event.preventDefault();
-    const workerDetailPage = `/worker/${selectedWorkerId}`;
-    window.location.replace(workerDetailPage);
+    const workerRecordsPage = `/records/${selectedWorkerId}`;
+    window.location.replace(workerRecordsPage);
   }
 
   return (
     <>
       {/* worker dropdown menu that allows admin to go look at each worker's detail page */}
       <h2 className='worker-title'>- View Worker Exposure Records -</h2>
-      <form id='worker-dropdown-form' method="get" onSubmit={goToWorkerDetail}>
+      <form id='worker-dropdown-form' method="get" onSubmit={goToWorkerRecords}>
         <label htmlFor='selectWorker'>Select Worker: </label>
         <select id="selectWorker" name="selectWorker" onChange={handleChange}>
           {
@@ -48,7 +48,7 @@ export default function App() {
           }
         </select>
         <br />
-        <button id='goToWorkerDetail' name='goToWorkerDetail'>View Records</button>
+        <button id='goToWorkerRecords' name='goToWorkerRecords'>View Records</button>
       </form>
     </>
   )

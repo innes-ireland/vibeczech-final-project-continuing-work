@@ -1,24 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Worker() {
+export default function App() {
 
-  const [user, setUser] = useState(null);
   const [exposure, setExposure] = useState([]);
-  // const [tool, setTool] = useState([]);
-
-  const getCurrentUser = async function () {
-    const response = await axios('/api/user');
-    setUser(response.data)
-    console.log(response.data.is_admin);
-
-  };
-
-  useEffect(() => {
-    getCurrentUser();
-  }, [])
-
-
+  const workerId = document.getElementById('worker-id-var-for-react').getAttribute("name");
+  console.log('This should be the worker ID from laravel:')
+  console.log(workerId);
 
 
   //-------getting data to populate table from exposure instance table-------
@@ -26,19 +14,19 @@ export default function Worker() {
 
     // Getting data with axios
     try {
-      const response = await axios.get('/api/exposure/' + user.id);
+      const response = await axios.get('/api/exposure/' + workerId);
       setExposure(response.data);
+      console.log('This should be the worker exposure record:')
+      console.log(response);
     } catch (err) {
       console.log(err);
     }
   }
 
   useEffect(() => {
-    if (user) {
 
-      loadExposure();
-    }
-  }, [user])
+    loadExposure();
+  }, [])
 
   //-------getting data to populate table from exposure instance table-------
 
@@ -67,13 +55,7 @@ export default function Worker() {
               <td>{exp.tool?.name}</td>
               <td>{exp.exposure_value}</td>
               <td>{exp.duration_minutes} hours</td>
-              {/* below is edit button only appears for admins: */}
-              {/* {
-                                (user !== null && user.is_admin == '1')
-                                    ? < td > <a>Edit</a></td >
-                                    : <></>
-                            } */}
-              {/* above is edit button only appears for admins: */}
+              <td> <a href={'/show-record/' + exp.id}>Edit</a></td>
             </tr>
           })
         }
