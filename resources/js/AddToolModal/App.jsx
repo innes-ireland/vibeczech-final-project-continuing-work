@@ -85,7 +85,7 @@ export default function App() {
 
     return (
         <>
-            < a href='#' id='modalTrigger' onClick={showModal} > Add tool</a >
+            < a href='#' id='modalTrigger' onClick={showModal} > Add Tool</a >
             {
                 successMessage
                     ? <div className="success-message-tool"><p>{successMessage}</p></div>

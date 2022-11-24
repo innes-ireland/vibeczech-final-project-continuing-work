@@ -19,18 +19,18 @@ const App = () => {
         // checks if there is a user: null takes you to login, otherwise to user landing page
         user == null
           ? <div className="logo">
-            <a href="http://www.vibeczech.test/">
+            <a href="http://www.vibeczech.codeboot.cz/">
               <img src={logo} alt="VibeCzech logo" id="logo" />
             </a>
           </div>
           : user.is_admin == 1
             ? <div className="logo">
-              <a href="http://www.vibeczech.test/admin">
+              <a href="http://www.vibeczech.codeboot.cz/admin">
                 <img src={logo} alt="VibeCzech logo" id="logo" />
               </a>
             </div>
             : <div className="logo">
-              <a href="http://www.vibeczech.test/worker">
+              <a href="http://www.vibeczech.codeboot.cz/worker">
                 <img src={logo} alt="VibeCzech logo" id="logo" />
               </a>
             </div>
