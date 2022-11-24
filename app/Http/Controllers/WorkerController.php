@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
+use DB;
 
 class WorkerController extends Controller
 {
@@ -27,4 +28,5 @@ class WorkerController extends Controller
     {
         return view('login.login');
     }
+
 }

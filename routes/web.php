@@ -26,7 +26,13 @@ Route::get('/', [LoginController::class, 'index']);
 // other pertinent file for this shit (look at Gate): 
 //    app/Providers/AuthServiceProvider.php
 Route::get('/admin', [AdminController::class, 'index'])->middleware('can:admin');
+
+// needs to make sure I'm feeding in the right stuff
+Route::post('/edit-record/{$recordId}', [AdminController::class, 'editThisRecord'])->middleware('can:admin');
 Route::get('/exposure-calculator', [AdminController::class, 'exposureCalculator'])->middleware('can:admin');
+
+Route::get('/records/{workerId?}', [AdminController::class, 'workerRecords'])->middleware('can:admin');
+Route::get('/show-record/{recordId?}', [AdminController::class, 'showThisRecord'])->middleware('can:admin');
 
 //gets specific worker's detail page (used from Admin page)
 Route::get('/worker/{id?}', [WorkerController::class, 'detail'])->name('worker.detail');
