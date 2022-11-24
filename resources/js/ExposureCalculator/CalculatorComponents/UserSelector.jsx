@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-export default function userSelector({ selectedTeamId }) {
-    const [workers, setWorkers] = useState([])
-    const [selectedWorkerId, setSelectedWorkerId] = useState(0)
+export default function userSelector({ selectedTeamId, workers, setWorkers, selectedWorkerId, setSelectedWorkerId }) {
+    // const [workers, setWorkers] = useState([])
+    // const [selectedWorkerId, setSelectedWorkerId] = useState(0)
     // const [workteamId, setWorkTeamId] = useState(null)
 
     const handleUserChange = (e) => {

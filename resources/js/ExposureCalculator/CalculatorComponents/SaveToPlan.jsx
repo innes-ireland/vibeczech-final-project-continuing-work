@@ -5,10 +5,10 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
     const saveToPlan = (event) => {
 
         event.preventDefault()
-
+        console.log(user);
         let new_entry = {
             id: planObjects.length,
-            name: user,
+            name: user.first_name,
             exposureLevel: product,
 
         }
@@ -24,9 +24,9 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
 
     };
     function removeWorker(id) {
-        const remainingWorkers = planObjects.filter((planObject) => planObject.id !== id)
-        setPlanObjects(remainingWorkers)
-        console.log(planObjects)
+        const remainingWorkers = planObjects.filter((planObject) => planObject.id !== id) // on click the button filters through the array with id 
+        setPlanObjects(remainingWorkers) // state is set to the new array rendered by filtering 
+
     }
 
     // }
