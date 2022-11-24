@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\WorkTeam;
 
 class AdminController extends Controller
@@ -40,11 +41,14 @@ class AdminController extends Controller
 
     // shows all records for one worker
     public function workerRecords($id = 0) {
+        // // If my other way doesn't work then...
         // // TODO: need to make this select all records with user_id = to $id
         // $records = DB::select('select * from student');
         // return view('worker.records',['records'=>$records]);
 
-        return view('worker.records');
+        $worker = User::find($id);
+
+        return view('worker.records', compact('worker'));
     }
 
     // shows table to edit one record

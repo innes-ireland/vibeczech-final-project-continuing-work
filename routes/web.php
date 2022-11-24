@@ -28,7 +28,7 @@ Route::get('/', [LoginController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index'])->middleware('can:admin');
 
 // needs to make sure I'm feeding in the right stuff
-Route::get('/edit-record/{$recordId}', [AdminController::class, 'editThisRecord'])->middleware('can:admin');
+Route::post('/edit-record/{$recordId}', [AdminController::class, 'editThisRecord'])->middleware('can:admin');
 Route::get('/exposure-calculator', [AdminController::class, 'exposureCalculator'])->middleware('can:admin');
 
 Route::get('/records/{workerId?}', [AdminController::class, 'workerRecords'])->middleware('can:admin');

@@ -20,14 +20,16 @@
 @section('content')
 <div class="worker_records">
 
-  <h1>Exposure Records</h1>
+  <h1>Exposure Records for {{ $worker->first_name }} {{  $worker->last_name }}</h1>
 
-  {{-- something like {{ $user->first_name }} {{ $user->first_name }} to personalize the header --}}
-
+  
   <div class="view_records" id="view_records"></div>
-    @viteReactRefresh
-    @vite('resources/js/ViewExposureRecords.jsx')
+  @viteReactRefresh
+  @vite('resources/js/ViewExposureRecords.jsx')
+  
 
+  {{-- This is an attempt to pass a variable from laravel to react --}}
+  <div id="worker-id-var-for-react" name={{ $worker->id }}></div>
 
 </div>
 @endsection
