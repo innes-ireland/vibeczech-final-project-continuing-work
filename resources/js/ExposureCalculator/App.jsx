@@ -39,15 +39,27 @@ function App() {
         <div className="App">
             {/* <Wrapper> */}
             {/* <SelectorBox> */}
-            <WorkTeamSelector teams={teams} setTeams={setTeams} selectedTeamId={selectedTeamId} setSelectedTeamId={setSelectedTeamId} />
-            <UserSelector selectedTeamId={selectedTeamId} workers={workers} setWorkers={setWorkers} selectedWorkerId={selectedWorkerId} setSelectedWorkerId={setSelectedWorkerId} />
-            <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
-            <HourCount hourCount={hourCount} setHourCount={setHourCount} />
-            <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
-            {/* </SelectorBox> */}
-            <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
-            <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} minuteCount={minuteCount} />
-            <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
+            <div className="calculator">
+                <div className="selectors">
+                    <WorkTeamSelector teams={teams} setTeams={setTeams} selectedTeamId={selectedTeamId} setSelectedTeamId={setSelectedTeamId} />
+                    <UserSelector selectedTeamId={selectedTeamId} workers={workers} setWorkers={setWorkers} selectedWorkerId={selectedWorkerId} setSelectedWorkerId={setSelectedWorkerId} />
+                    <ToolSelector vibrationMagnitude={vibrationMagnitude} setVibrationMagnitude={setVibrationMagnitude} />
+                </div>
+                <div className="hour">
+                    <HourCount hourCount={hourCount} setHourCount={setHourCount} />
+                </div>
+                <div className="minute">
+                    <MinuteCount minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
+                </div>
+                {/* </SelectorBox> */}
+                <div className="calc_line">
+                    <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
+                </div>
+                <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} minuteCount={minuteCount} />
+            </div>
+            <div className="graph">
+                <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
+            </div>
             {/* </Wrapper> */}
 
 

@@ -21,10 +21,10 @@ export default function MinuteCount({ minuteCount, setMinuteCount }) {
 
     return (
         <>
-            <button onClick={() => incrementMinute(15)}>+15 min </button>
+            <button onClick={() => incrementMinute(15)}>+15 Min </button>
             <span> {minuteCount}</span>
-            <button onClick={() => decrementMinute(15)}>-15 min</button>
-            <button onClick={() => resetMinuteCount()}> reset</button>
+            <button onClick={() => decrementMinute(15)}>-15 Min</button>
+            <button className="reset" onClick={() => resetMinuteCount()}> Reset</button>
         </>
     )
 }
