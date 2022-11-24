@@ -14,7 +14,7 @@
     background: -webkit-linear-gradient(0deg, #1f1f1f 0%, #101010 100%);
     background: linear-gradient(0deg, #1f1f1f 0%, #101010 100%);
     border-radius: 4px;
-    height: 150%;
+    height: 80%;
     margin: 5% auto;
     padding: 20px;
     width: 50%;
@@ -83,12 +83,19 @@
     justify-content: space-between;
 }
 
+.users {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
 .users_display {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 40%;
-    margin: 12px;
+    margin-left: 5%;
+    margin-bottom: 12px;
 
 }
 
@@ -101,7 +108,9 @@
     flex-direction: row;
     justify-content: space-between;
     width: 40%;
-    margin: 12px;
+    margin-left: 5%;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .list-of-workers-name {
@@ -109,6 +118,8 @@
 }
 
 .list-of-workers-list {
+    display: flex;
+    flex-flow: row wrap;
     margin: 0;
     padding: 0;
 }

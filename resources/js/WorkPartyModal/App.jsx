@@ -164,15 +164,17 @@ export default function App() {
               </ul>
 
               <hr></hr>
-              {
-                workers.map(worker => {
-                  return <div className='users_display' key={worker.id}>
-                    <p className='users_display-name'>{worker.first_name} {worker.last_name}</p>
-                    <button onClick={() => addParty(worker)
-                    }>Add</button>
-                  </div>
-                })
-              }
+              <div className='users'>
+                {
+                  workers.map(worker => {
+                    return <div className='users_display' key={worker.id}>
+                      <p className='users_display-name'>{worker.first_name} {worker.last_name}</p>
+                      <button onClick={() => addParty(worker)
+                      }>Add</button>
+                    </div>
+                  })
+                }
+              </div>
             </div>
           </div>
           :
