@@ -40,4 +40,4 @@ Route::get('/worker/{id?}', [WorkerController::class, 'detail'])->name('worker.d
 
 // logs out
 Route::get('/logout', [WorkerController::class, 'logout']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
