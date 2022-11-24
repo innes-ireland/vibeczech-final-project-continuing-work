@@ -73,28 +73,35 @@ class AdminController extends Controller
       // I think I'm going to need a var like this for each thing that can
       // be edited?
 
-        // need dropdown of tools for this in the form that gives me tool_id
-        $tool = $request->input('tool');
+        // // need dropdown of tools for this in the form that gives me tool_id
+        // $tool = $request->input('tool_id');
 
-        // no fucking clue how to feed this one in
-        $duration = $request->input('duration');
+        // // no fucking clue how to feed this one in
+        // $duration = $request->input('duration_minutes');
 
-        // just a text field that only accepts numbers if possible
-        $expVal = $request->input('exposure_value');
+        // // just a text field that only accepts numbers if possible
+        // $expVal = $request->input('exposure_value');
 
         // unsure how this needs to be edited
-        DB::update('
-        update exposure_instance 
-        set tool_id = ? 
-        set duration_minutes = ?
-        set exposure_value = ?
-        where id = ?
-        ',[$tool, $duration, $expVal, $recordId]);
+        // DB::update('
+        // update exposure_instance 
+        // set tool_id = ? 
+        // set duration_minutes = ?
+        // set exposure_value = ?
+        // where id = ?
+        // ',[$tool, $duration, $expVal, $recordId]);
+
+        $record = ExposureInstance::find($recordId);
+
+        $record->tool_id = $request->input('tool_id');
+        $record->duration_minutes = $request->input('duration_minutes');
+        $record->exposure_value = $request->input('exposure_value');
+        $record->save();
 
 
-        echo "Record updated successfully.<br/>";
+        // echo "Record updated successfully.<br/>";
 
-        // TODO: maybe just make this a button that's always available on this page instead
-        echo '<a href = "/show-record/?">Click Here</a> to go back.', [$recordId];
+        // // TODO: maybe just make this a button that's always available on this page instead
+        // echo '<a href = "/show-record/?">Click Here</a> to go back.', [$recordId];
     }
 }

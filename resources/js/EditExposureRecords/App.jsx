@@ -10,15 +10,7 @@ export default function App() {
   // "old" record
   const [record, setRecord] = useState([])
   // record as we wish it to be
-  const [editedRecord, setEditedRecord] = useState({
-    plan_id: record.plan_id,
-    user_id: record.user_id,
-    exposure_value: '',
-    exposure_start: record.exposure_start,
-    exposure_finish: record.exposure_finish,
-    duration_minutes: '',
-    tool_id: '',
-  })
+  const [editedRecord, setEditedRecord] = useState({})
 
   const recordId = document.getElementById('record-id-var-for-react').getAttribute("name");
 
@@ -56,6 +48,17 @@ export default function App() {
 
   useEffect(() => {
     if (record && tools) { setCurrentToolId(record.tool_id) }
+    if (record) {
+      setEditedRecord({
+        plan_id: record.plan_id,
+        user_id: record.user_id,
+        exposure_value: record.exposure_value,
+        exposure_start: record.exposure_start,
+        exposure_finish: record.exposure_finish,
+        duration_minutes: record.duration_minutes,
+        tool_id: record.tool_id,
+      })
+    }
   }, [tools, record])
 
   // setCurrentTool(findToolByID(record.tool_id));
@@ -67,7 +70,7 @@ export default function App() {
   //   console.log(selectedToolId);
   // }
 
-  // ---------- handling changes in the form 
+  // ---------- handling changes in the form and submitting them
 
   const handleChange = (event) => {
     setEditedRecord(previous_values => {
@@ -76,16 +79,50 @@ export default function App() {
         [event.target.name]: event.target.value
       });
     });
-    setCurrentToolId(event.target.value)
+    if (event.target.name == "tool_id") { setCurrentToolId(event.target.value) }
   }
 
+  const handleSubmit = async (event) => {
+
+    event.preventDefault();
+
+    // making the AJAX request
+    const response = await fetch(('/edit-record/' + recordId), {
+      method: 'POST',
+      body: JSON.stringify(editedRecord),
+      headers: {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+      }
+    });
+
+    // parsing the response as JSON
+    const response_data = await response.json();
+
+    setSuccessMessage('Record was successfully updated');
+
+    // if the response code is not 2xx(success)
+    if (Math.floor(response.status / 100) !== 2) {
+      switch (response.status) {
+        case 422:
+          // handle validation errors here
+          console.log('VALIDATION FAILED:', response_data.errors);
+          break;
+        default:
+          console.log('UNKNOWN ERROR', response_data);
+          break;
+      }
+    }
+
+  }
 
   // ---------- form for editing exposure instance record
 
   return (
 
     <div>
-      <form action="/edit-record/<?php echo $recordId; ?>" method="post">
+      <form action="/record/recordId" method="post">
 
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
 
@@ -108,7 +145,7 @@ export default function App() {
         <input className='edit-record-form-input' type="text" name="exposure_value"
           value={editedRecord.exposure_value}
           onChange={handleChange}
-          placeholder={record.exposure_value}
+        // placeholder={record.exposure_value}
         />
         <br />
 
@@ -116,11 +153,11 @@ export default function App() {
         <input className='edit-record-form-input' type="text" name="duration_minutes"
           value={editedRecord.duration_minutes}
           onChange={handleChange}
-          placeholder={record.duration_minutes}
+        // placeholder={record.duration_minutes}
         />
         <br />
 
-        <button id='updateExposureRecord' name='updateExposureRecord'>Update Exposure Record</button>
+        <button id='updateExposureRecord' name='updateExposureRecord' onClick={(e) => { handleSubmit(e) }}>Update Exposure Record</button>
 
       </form>
 
