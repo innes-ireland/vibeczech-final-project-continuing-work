@@ -24,6 +24,7 @@ export default defineConfig({
         'resources/js/header.jsx',
         'resources/css/admin.scss',
         'resources/js/currentWorkTeams.jsx',
+        'resources/css/work-party-modal.scss',
 
       ],
       refresh: true,
