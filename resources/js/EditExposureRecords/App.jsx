@@ -113,8 +113,15 @@ export default function App() {
           console.log('UNKNOWN ERROR', response_data);
           break;
       }
+
     }
 
+  }
+
+  const goBackToWorkerRecords = (event) => {
+
+    event.preventDefault();
+    window.location.replace('/records/' + record.user_id);
   }
 
   // ---------- form for editing exposure instance record
@@ -122,7 +129,7 @@ export default function App() {
   return (
 
     <div>
-      <form action="/record/recordId" method="post">
+      <form action="/" method="post">
 
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />
 
@@ -157,7 +164,10 @@ export default function App() {
         />
         <br />
 
-        <button id='updateExposureRecord' name='updateExposureRecord' onClick={(e) => { handleSubmit(e) }}>Update Exposure Record</button>
+        <button id='updateExposureRecord' name='updateExposureRecord' onClick={(e) => {
+          handleSubmit(e)
+          goBackToWorkerRecords(e)
+        }}>Update Exposure Record</button>
 
       </form>
 
