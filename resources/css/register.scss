@@ -1,17 +1,22 @@
 @media only screen and (max-width: 600px) {
   #register-form {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    width: 150%;
+    margin-left: 65px;
+    padding: 0;
 
     .register__container {
       display: flex;
-      flex-flow: column;
-      font-size: 0.8em;
-      justify-content: center;
+      flex-direction: column;
+      font-size: 1.5em;
+
       width: 100%;
+      margin: 0;
+      padding: 0;
 
       input {
         color: #ffffff;
@@ -29,6 +34,8 @@
       font-size: 0.9em;
       height: 2em;
       width: 20%;
+      margin-right: 310px;
+
     }
   }
 }
