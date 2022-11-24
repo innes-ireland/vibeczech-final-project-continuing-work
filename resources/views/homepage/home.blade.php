@@ -34,7 +34,7 @@
                 VibeCzech
 </h1>
 <h3 id="slide-in2" class="animation2">Designed to allow both management and operators to calculate, monitor and plan exposure to hand arm vibrations (HAV's) from power tool operation.</h3>
-<img src={{url('/icons/chain-saw.png')}} alt="">
+<img src=<img src="{{ asset('/icons/chain-saw.png')}}" alt="">
 
     
 
