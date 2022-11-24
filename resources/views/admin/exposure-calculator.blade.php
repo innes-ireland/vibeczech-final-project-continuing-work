@@ -5,6 +5,8 @@
   <title>VibeCzech | Exposure Calculator</title>
   @vite('resources/css/admin.scss')
   @vite('resources/css/modal.css')
+  @vite('resources/css/calculator.scss')
+
 @endsection
 
 

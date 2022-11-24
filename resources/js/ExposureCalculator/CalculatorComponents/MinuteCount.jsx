@@ -2,9 +2,14 @@ import { useState } from "react";
 
 export default function MinuteCount({ minuteCount, setMinuteCount }) {
 
-    function changeMinute(amount) {
-        if (minuteCount < 45 && minuteCount >= 0) {
+    function incrementMinute(amount) {
+        if (minuteCount < 45) {
             setMinuteCount(minuteCount => minuteCount + amount)
+        }
+    }
+    function decrementMinute(amount) {
+        if (minuteCount > 0) {
+            setMinuteCount(minuteCount => minuteCount - amount)
         }
     }
 
@@ -16,10 +21,10 @@ export default function MinuteCount({ minuteCount, setMinuteCount }) {
 
     return (
         <>
-            <button onClick={() => changeMinute(15)}>+15 min </button>
+            <button onClick={() => incrementMinute(15)}>+15 Min </button>
             <span> {minuteCount}</span>
-            <button onClick={() => changeMinute(-15)}>-15 min</button>
-            <button onClick={() => resetMinuteCount()}> reset</button>
+            <button onClick={() => decrementMinute(15)}>-15 Min</button>
+            <button className="reset" onClick={() => resetMinuteCount()}> Reset</button>
         </>
     )
 }

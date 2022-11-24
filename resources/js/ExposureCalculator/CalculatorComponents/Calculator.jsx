@@ -16,10 +16,10 @@ export default function Calculator({ product, setProduct, hourValue, minuteCount
             <button onClick={() => {
 
                 calculate()
-            }}> Calculate Vibration</button>
+            }}> Calculate</button>
             <span> {product} </span>
 
-            <button onClick={clearCalculator}> clear</button>
+            <button className="reset" onClick={clearCalculator}> Clear</button>
 
         </>
     )
