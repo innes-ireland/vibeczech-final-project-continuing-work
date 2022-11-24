@@ -19,9 +19,16 @@
     @vite('resources/js/Admin.jsx')
   </div>
 
-  <div id='add_tool_modal' >
-    @viteReactRefresh
-    @vite('resources/js/add-tool-modal.jsx')    
+  <div class='button_container'>
+    <div id='add_tool_modal' class='button_div'>
+      @viteReactRefresh
+      @vite('resources/js/add-tool-modal.jsx')
+    </div>
+    <div class='button_div'>
+      <a href="http://www.vibeczech.test/exposure-calculator" id="exposure-redirect">
+        Exposure Calculator
+      </a> 
+    </div> 
   </div>
   
   <div class='work_parties_container'>
@@ -33,13 +40,6 @@
     <div id='current_workteams'>
       @viteReactRefresh
       @vite('resources/js/currentWorkTeams.jsx')
-    </div>
-  </div>
-
-  <div class="exposure-calculator">
-    <div id='exposure_calculator'>
-    @viteReactRefresh
-    @vite('resources/js/exposure-calculator.jsx')
     </div>
   </div>
 
