@@ -18,9 +18,9 @@
 
 {{-- Content section --}}
 @section('content')
-<div class="worker_records">
+<h1>Exposure Records for {{ $worker->first_name }} {{  $worker->last_name }}</h1>
+<div class="exposure_record">
 
-  <h1>Exposure Records for {{ $worker->first_name }} {{  $worker->last_name }}</h1>
 
   
   <div class="view_records" id="view_records"></div>
