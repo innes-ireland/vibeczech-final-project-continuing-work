@@ -17,8 +17,8 @@ export default function DisplayGraph({ planObjects, graphData, setGraphData }) {
 
     const [dataSets, setDataSets] = useState({
         label: "HAVs exposure levels",
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(220, 76, 24)',
+        borderColor: 'rgb(220, 76, 24)',
         data: [],
     });
 
@@ -69,6 +69,7 @@ export default function DisplayGraph({ planObjects, graphData, setGraphData }) {
         <Bar data={{
             labels: labels,
             datasets: [dataSets]
+
         }}
         />
 
