@@ -1,15 +1,28 @@
 import { useState } from "react";
 import HourCount from "./HourCount";
 import MinuteCount from "./MinuteCount";
-export default function SaveToPlan({ product, user, planObjects, setPlanObjects }) {
+export default function SaveToPlan({ product, user, planObjects, setPlanObjects, hourCount, minuteCount }) {
+    const [exposureInstanceValues, setExposureInstanceValues] = useState({
+        plan_id: '',
+        user_id: '',
+        exposure_value: '',
+        exposure_start: '',
+        exposure_finish: '',
+        duration_minutes: '',
+        tool_id: '',
+    }) // default values are empty, all values needed to populate DB columns are here
     const saveToPlan = (event) => {
+
+
+
+
 
         event.preventDefault()
         console.log(user);
         let new_entry = {
             id: planObjects.length,
             name: user.first_name,
-            exposureLevel: product,
+            exposureLevel: product
 
         }
 
@@ -29,31 +42,61 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
 
     }
 
-    // }
-    // function sendToDatabase() {
-    //     let exposureInstanceData = {
-    //         id: exposureInstanceData.length,
-    //         user_id: user.id, 
-    //         exposure_value: product,
-    //         exposure_start: " ",
-    //         exposure_finish: " ",
-    //         duration_minutes: hourCount + (minuteCount/60) 
-    //     } // exposure instance data set according to the model
-    //     return (
-    //         <form>
-    //             <input type="hidden" name="user_id" value={worker.id}></input>
-    //             <input type="hidden" name="exposure_value" value={product}></input>
-    //             <input type="hidden" name="duration_minutes" value={hourCount + (minuteCount / 60)}></input>
-    //             <input type="dateTime" name="exposure_start" value="dateTime"></input>
-    //             <input type="dateTime" name="exposure_finish" value="dateTime"></input>
-    //             <button type="submit"> submit record </button>
-
-    //         </form>
-    //     )
+    function populateTable() {
 
 
+
+    }
 
     // }
+
+
+    const handleSubmitInstance = async (event) => {
+        event.preventDefault();
+
+        let completedInstance = {
+            plan_id: '',
+            user_id: user.id,
+            exposure_value: product,
+            exposure_start: '',
+            exposure_finish: '',
+            duration_minutes: hourCount + (minuteCount / 60),
+            tool_id: '',
+        }
+
+        console.log(completedInstance);
+
+
+        // making the AJAX request
+        const response = await fetch('/api/exposure-instance/add', {
+            method: 'POST',
+            body: JSON.stringify(completedInstance),
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        });
+        // parsing the response as JSON
+        const response_data = await response.json();
+        // setSuccessMessage('Tool was successfully added');
+        // if the response code is not 2xx(success)
+        if (Math.floor(response.status / 100) !== 2) {
+            switch (response.status) {
+                case 422:
+                    // handle validation errors here
+                    console.log('VALIDATION FAILED:', response_data.errors);
+                    break;
+                default:
+                    console.log('UNKNOWN ERROR', response_data);
+                    break;
+            }
+        }
+    }
+
+
+
+
 
 
     return (
@@ -64,7 +107,11 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects 
                 {planObjects.map(planObject => {
 
                     return <li>
-                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel} <button type="button" onClick={() => { removeWorker(planObject.id) }}> X</button><button>send to DB</button>
+                        Worker: {planObject.name}   Vibration Exposure:{planObject.exposureLevel}
+
+                        <button type="button" onClick={() => { removeWorker(planObject.id) }}> X</button>
+
+                        <button onClick={(event) => { handleSubmitInstance(event) }}>send to DB</button>
                     </li>
 
 
