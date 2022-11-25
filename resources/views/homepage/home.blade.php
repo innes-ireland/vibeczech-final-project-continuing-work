@@ -26,10 +26,7 @@
     <body>
       @include('layouts.header')
       @yield('content') 
-          <div id="root-home" class="homepage">
-
-    @viteReactRefresh    
-    @vite("resources/js/homepage.jsx")
+  
     <h1 id="slide-in-text" class="animation-no">
                 VibeCzech
 </h1>
