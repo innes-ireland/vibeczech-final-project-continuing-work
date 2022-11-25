@@ -38,7 +38,7 @@
     </ul>
     </div>
     <div class="uk_docs">
-    <h2> for UK Employers and Workers </h2>
+    <h2> For UK Employers and Workers </h2>
     <ul>
     <li><a href= "https://www.hse.gov.uk/vibration/hav/indg296.htm"> HSE guidance on Hand Arm Vibrations for employees </a></li>
     <li><a href= "https://www.hse.gov.uk/pubns/indg175.htm"> HSE guidance on Hand Arm Vibrations for employers </a></li>
