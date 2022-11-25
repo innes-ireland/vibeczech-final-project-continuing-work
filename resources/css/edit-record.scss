@@ -1,8 +1,19 @@
-.exposure_record {
+.edit_records {
+  align-items: center;
   background-color: #232323;
-  margin-right: 10%;
-  padding: 1em;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 3em;
+  width: 40%;
+
+  button {
+    margin: 1em 0;
+  }
+}
+
+.edit_record_form {
+  margin: 0 auto;
 }
 
 h1 {
