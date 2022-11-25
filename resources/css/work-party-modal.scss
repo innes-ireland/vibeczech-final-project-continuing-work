@@ -123,3 +123,146 @@
     margin: 0;
     padding: 0;
 }
+
+
+@media only screen and (max-width: 650px) {
+    .modal_work_party {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .modal_work_party_content {
+        display: flex;
+        flex-direction: column;
+        height: 130%;
+        margin: 5% auto;
+        padding: 20px;
+        width: 70%;
+    }
+
+    .users {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .users_display-name {
+            font-size: 10px;
+        }
+
+    }
+
+    .list-of-workers-list {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .list-of-workers-name {
+            font-size: 10px;
+        }
+
+    }
+
+
+}
+
+
+
+
+@media only screen and (min-width: 850px) and (max-width: 1050px) {
+    .modal_work_party {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .modal_work_party_content {
+        display: flex;
+        flex-direction: column;
+        height: 130%;
+        margin: 5% auto;
+        padding: 20px;
+        width: 70%;
+    }
+
+    .users {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .users_display-name {
+            font-size: 10px;
+        }
+
+    }
+
+    .list-of-workers-list {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .list-of-workers-name {
+            font-size: 10px;
+        }
+
+    }
+
+
+}
+
+
+
+
+
+@media only screen and (min-width: 650px) and (max-width: 1250px) {
+    .modal_work_party {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .modal_work_party_content {
+        display: flex;
+        flex-direction: column;
+        height: 130%;
+        margin: 5% auto;
+        padding: 20px;
+        width: 70%;
+    }
+
+    .users {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .users_display-name {
+            font-size: 10px;
+        }
+
+    }
+
+    .list-of-workers-list {
+        display: flex;
+        flex-direction: column;
+        flex-flow: row wrap;
+
+
+
+        .list-of-workers-name {
+            font-size: 10px;
+        }
+
+    }
+
+
+}
