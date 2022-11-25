@@ -1,0 +1,88 @@
+.exposure_record {
+  background-color: #232323;
+  margin-right: 10%;
+  padding: 1em;
+  width: 80%;
+}
+
+h1 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .exposure_record {
+    margin-left: 7%;
+  }
+
+  .graph_container {
+    margin-left: 7%;
+  }
+
+  .logo {
+    margin-left: 23%;
+  }
+
+  #logout-holder {
+    margin-right: 1em;
+
+    p {
+      font-size: 0.6em;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .exposure_record {
+    margin-left: 8%;
+  }
+
+  .graph_container {
+    margin-left: 8%;
+  }
+
+  .logo {
+    margin-left: 32%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .exposure_record {
+    margin-left: 10%;
+  }
+
+  .graph_container {
+    margin-left: 10%;
+  }
+
+  .logo {
+    margin-left: 38%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .exposure_record {
+    margin-left: 10%;
+  }
+
+  .graph_container {
+    margin-left: 10%;
+  }
+
+  .logo {
+    margin-left: 40%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .exposure_record {
+    margin-left: 10%;
+  }
+
+  .graph_container {
+    margin-left: 10%;
+  }
+
+  .logo {
+    margin-left: 42%;
+  }
+}

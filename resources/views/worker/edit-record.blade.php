@@ -15,7 +15,7 @@
 
 
 
-  @vite('resources/css/worker-detail.scss')
+  @vite('resources/css/edit-record.scss')
 @endsection
 
 {{-- Content section --}}
