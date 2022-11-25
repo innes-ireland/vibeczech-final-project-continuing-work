@@ -1,7 +1,7 @@
 import { useState } from "react";
 import HourCount from "./HourCount";
 import MinuteCount from "./MinuteCount";
-export default function SaveToPlan({ product, user, planObjects, setPlanObjects, hourCount, minuteCount }) {
+export default function SaveToPlan({ product, setProduct, user, planObjects, setPlanObjects, setHourCount, hourCount, setMinuteCount, minuteCount, tool }) {
     const [exposureInstanceValues, setExposureInstanceValues] = useState({
         plan_id: '',
         user_id: '',
@@ -29,6 +29,10 @@ export default function SaveToPlan({ product, user, planObjects, setPlanObjects,
 
         let new_array = planObjects.concat(new_entry)
         setPlanObjects(new_array);
+
+        setProduct(0)
+        setHourCount(0)
+        setMinuteCount(0)
 
 
         // setPlanObjects(new_array);

@@ -55,7 +55,7 @@ function App() {
                 <div className="calc_line">
                     <Calculator product={product} setProduct={setProduct} hourValue={hourCount} minuteCount={minuteCount} vibrationMagnitude={vibrationMagnitude} />
                 </div>
-                <SaveToPlan product={product} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} minuteCount={minuteCount} />
+                <SaveToPlan product={product} setProduct={setProduct} user={user} planObjects={planObjects} setPlanObjects={setPlanObjects} hourCount={hourCount} setHourCount={setHourCount} minuteCount={minuteCount} setMinuteCount={setMinuteCount} />
             </div>
             <div className="graph">
                 <DisplayGraph graphData={graphData} setGraphData={setGraphData} planObjects={planObjects} />
