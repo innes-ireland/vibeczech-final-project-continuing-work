@@ -131,7 +131,7 @@ export default function App() {
     <>
       <button id='goBackToAdmin' name='goBackToAdmin' onClick={(e) => { goBackToWorkerRecords(e) }}>Back to Exposure Records</button>
 
-      <div>
+      <div className="edit_record_form">
         <form action="/" method="post">
 
           <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>" />

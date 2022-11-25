@@ -8,6 +8,7 @@ export default defineConfig({
       input: [
         'resources/css/admin.scss',
         'resources/css/calculator.scss',
+        'resources/css/edit-record.scss',
         'resources/css/login.scss',
         'resources/css/register.scss',
         'resources/css/tool-modal.scss',
