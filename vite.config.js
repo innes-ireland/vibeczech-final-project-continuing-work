@@ -8,14 +8,16 @@ export default defineConfig({
       input: [
         'resources/css/admin.scss',
         'resources/css/calculator.scss',
+        'resources/css/documentation.scss',
         'resources/css/edit-record.scss',
+        'resources/css/home.scss',
         'resources/css/login.scss',
         'resources/css/register.scss',
         'resources/css/tool-modal.scss',
+        'resources/css/universal-index.css',
         'resources/css/work-party-modal.scss',
         'resources/css/worker-detail.scss',
         'resources/css/modal.css',
-        'resources/css/universal-index.css',
         'resources/js/add-tool-modal.jsx',
         'resources/js/Admin.jsx',
         'resources/js/app.js',
@@ -29,6 +31,7 @@ export default defineConfig({
         'resources/js/work-party-modal.jsx',
         'resources/js/Worker.jsx',
         'resources/js/workerDropdown.jsx',
+
 
       ],
       refresh: true,
