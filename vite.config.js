@@ -31,6 +31,7 @@ export default defineConfig({
         'resources/js/work-party-modal.jsx',
         'resources/js/Worker.jsx',
         'resources/js/workerDropdown.jsx',
+        'resources/js/Homepage.jsx'
 
 
       ],
