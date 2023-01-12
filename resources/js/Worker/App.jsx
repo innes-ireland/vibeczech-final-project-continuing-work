@@ -93,6 +93,7 @@ export default function Worker() {
           </table>
         </div>
         <div className='visualiser'>
+          <h2> Exposure Calculator</h2>
           <div className='workerCalculator'>
             <div className="selectors">
 
