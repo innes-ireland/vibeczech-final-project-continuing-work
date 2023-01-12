@@ -21,7 +21,7 @@ export default function SaveToPlan({ product, setProduct, user, planObjects, set
         console.log(user);
         let new_entry = {
             id: planObjects.length,
-            name: user.first_name,
+            name: 'Operator',
             exposureLevel: product
 
         }
@@ -105,18 +105,18 @@ export default function SaveToPlan({ product, setProduct, user, planObjects, set
     return (
         <>
             <div className="save_line">
-                <button onClick={saveToPlan}> Save Plan</button>
+                <button onClick={saveToPlan}> Visualise</button>
             </div>
             <div className="current_plan">
                 <ul>
                     {planObjects.map(planObject => {
 
                         return <li>
-                            Worker: {planObject.name} |  Vibration Exposure:{planObject.exposureLevel}
+                            {planObject.name} |  Vibration Exposure:{planObject.exposureLevel}
 
                             <button type="button" className="remove" onClick={() => { removeWorker(planObject.id) }}> X</button>
 
-                            <button onClick={(event) => { handleSubmitInstance(event) }}>Send to DB</button>
+
                         </li>
 
 
@@ -129,5 +129,3 @@ export default function SaveToPlan({ product, setProduct, user, planObjects, set
     )
 
 }
-
-

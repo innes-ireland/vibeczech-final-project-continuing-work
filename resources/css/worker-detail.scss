@@ -1,3 +1,9 @@
+.contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .exposure_record {
     background-color: #232323;
     margin-right: 10%;
@@ -7,6 +13,22 @@
 
 h1 {
     text-align: center;
+}
+
+.instance_table {
+    display: flex;
+    flex-direction: column;
+}
+
+.visualiser {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.workerCalculator {
+    display: flex;
+    flex-direction: row;
 }
 
 @media only screen and (max-width: 600px) {
